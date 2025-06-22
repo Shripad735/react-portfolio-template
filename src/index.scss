@@ -97,6 +97,10 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
   .navigation-bar {
     background-color: #f8f9fa;
+
+    button {
+      color: #0d1116 !important;
+    }
   }
 
   p, a, h1, h2, h3, h4, h5, label, button {
@@ -114,6 +118,49 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
   .about-section {
     background-image: url("./assets/images/bg-light.png");
+  }
+
+  .about-section .content .MuiButton-outlined {
+    color: #0d1116;
+    border-color: #0d1116;
+  }
+  .about-section .content .MuiButton-outlined:hover {
+    background-color: #0d1116;
+    color: white;
+  }
+
+  .contact-form {
+    button {
+      background-color: #0d1116;
+      color: white;
+    }
+    button:hover {
+      background-color: #5000ca;
+    }
+    .MuiInputBase-input {
+      color: #0d1116;
+    }
+    .MuiInputLabel-root {
+      color: rgba(0, 0, 0, 0.6) !important;
+    }
+    .MuiInputLabel-root.Mui-focused {
+      color: #0d1116 !important;
+    }
+    .MuiInputBase-input::placeholder {
+      color: rgba(0, 0, 0, 0.4) !important;
+      opacity: 1 !important;
+    }
+    .MuiOutlinedInput-root {
+      & fieldset {
+        border-color: rgba(0, 0, 0, 0.4);
+      }
+      &:hover fieldset {
+        border-color: #0d1116;
+      }
+      &.Mui-focused fieldset {
+        border-color: #0d1116;
+      }
+    }
   }
 
   .skills-container svg {

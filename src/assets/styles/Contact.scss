@@ -18,8 +18,33 @@
     color: white;
   }
 
-  fieldset {
-    background-color: white;
+  .MuiInputBase-input {
+    color: white;
+  }
+
+  .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .MuiInputLabel-root.Mui-focused {
+    color: white !important;
+  }
+
+  .MuiInputBase-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+  }
+
+  .MuiOutlinedInput-root {
+    & fieldset {
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+    &:hover fieldset {
+      border-color: white;
+    }
+    &.Mui-focused fieldset {
+      border-color: white;
+    }
   }
 }
 

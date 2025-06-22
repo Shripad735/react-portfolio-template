@@ -1,44 +1,40 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faServer, faCode } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
+    "Node.js",
+    "Express.js",
     "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+    "Java",
+    "MySQL",
+    "MongoDB",
+    "REST-API",
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
     "AWS",
-    "Azure",
+    "Terraform",
     "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "Git",
+    "GitHub",
+    "CloudFormation",
+    "CodePipeline",
+    "CodeBuild",
+    "CodeDeploy",
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "C++",
+    "Python",
+    "Data Structures",
+    "Algorithms",
+    "LeetCode",
+    "HackerRank",
 ];
 
 function Expertise() {
@@ -48,9 +44,9 @@ function Expertise() {
             <h1>Expertise</h1>
             <div className="skills-grid">
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                    <FontAwesomeIcon icon={faServer} size="3x"/>
+                    <h3>Backend Development</h3>
+                    <p>I specialize in building robust and scalable server-side applications. My expertise lies in creating RESTful APIs, managing databases, and implementing business logic using technologies like Node.js and Python.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -62,7 +58,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
                     <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <p>I have experience in automating CI/CD pipelines and infrastructure provisioning on AWS. I help set up testing, CI/CD pipelines, and deployment automation to support successful Go-Live.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -72,9 +68,9 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
+                    <FontAwesomeIcon icon={faCode} size="3x"/>
+                    <h3>Problem Solving & DSA</h3>
+                    <p>I am passionate about problem-solving and have a strong foundation in Data Structures and Algorithms. I actively practice on platforms like LeetCode and HackerRank to hone my skills.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (

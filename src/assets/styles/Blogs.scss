@@ -1,0 +1,41 @@
+.blogs-container {
+    padding: 5% 10%;
+    text-align: left;
+
+    h1 {
+        margin-bottom: 40px;
+    }
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-item {
+    h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+
+    a:hover h3 {
+        text-decoration: underline;
+        color: #5000ca;
+    }
+}
+
+.light-mode .article-item a:hover h3 {
+    color: #5000ca;
+}
+
+.more-articles {
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+        font-size: 1.1rem;
+        text-decoration: underline;
+    }
+}

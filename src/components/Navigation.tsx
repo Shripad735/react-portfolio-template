@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Articles', 'articles'], ['Contact', 'contact']];
 
 function Navigation({parentToChild, modeChange}: any) {
 
@@ -69,6 +69,11 @@ function Navigation({parentToChild, modeChange}: any) {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem key="resume" disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} component="a" href="https://drive.google.com/file/d/1AmLqjNSht74s-REtt2D81zGXGWx9dM8L/view?usp=sharing" target="_blank">
+              <ListItemText primary="Resume" />
+            </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -98,6 +103,15 @@ function Navigation({parentToChild, modeChange}: any) {
                 {item[0]}
               </Button>
             ))}
+            <Button 
+              key="resume"
+              component="a"
+              href="https://drive.google.com/file/d/1AmLqjNSht74s-REtt2D81zGXGWx9dM8L/view?usp=sharing" 
+              target="_blank" 
+              sx={{ color: '#fff' }}
+            >
+              Resume
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

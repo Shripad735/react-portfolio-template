@@ -1,7 +1,7 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
@@ -10,56 +10,90 @@ function Timeline() {
   return (
     <div id="history">
       <div className="items-container">
-        <h1>Career History</h1>
+        <h1>Career & Education</h1>
         <VerticalTimeline>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="2020"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
+            icon={<FontAwesomeIcon icon={faGraduationCap} />}
+          >
+            <h3 className="vertical-timeline-element-title">10th | MSBSHSE</h3>
+            <h4 className="vertical-timeline-element-subtitle">Shri Sant Dnyaneshwar Madhyamik Vidyalaya Kothrud, Pune</h4>
+            <p>
+              Percentage: 93 / 100
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="2020 - 2022"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
+            icon={<FontAwesomeIcon icon={faGraduationCap} />}
+          >
+            <h3 className="vertical-timeline-element-title">12th | MSBSHSE</h3>
+            <h4 className="vertical-timeline-element-subtitle">MIT JUNIOR COLLEGE, KOTHRUD, PUNE</h4>
+            <p>
+              Percentage: 78 / 100
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="2022 - 2026"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
+            icon={<FontAwesomeIcon icon={faGraduationCap} />}
+          >
+            <h3 className="vertical-timeline-element-title">B.Tech. - Computer Engineering</h3>
+            <h4 className="vertical-timeline-element-subtitle">MIT Academy of Engineering, Pune</h4>
+            <p>
+              CGPA: 9.13 / 10
+            </p>
+          </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            date="Jun 2024 - Aug 2024"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Full Stack Web Developer Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Career Credentials</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Contributed to a Full Stack Web Project called Project Planner. Gained experience in front-end development with React.js, backend with Express.js, and database management with MySQL.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="Jun 2024 - Sep 2024"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">AICTE Cloud Virtual Internship</h3>
+            <h4 className="vertical-timeline-element-subtitle">Remote</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Mastered core AWS services like EC2, S3, RDS, and VPC. Gained experience in automating infrastructure using CloudFormation and enhanced skills in cloud cost management.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2021 - 2021"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="Jun 2025 - Aug 2025 (Ongoing)"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Summer Intern - Node.js</h3>
+            <h4 className="vertical-timeline-element-subtitle">Celebal Technologies (Remote)</h4>
             <p>
-              Full-stack Development, API Development, User Experience
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2020 - 2020"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
-            <p>
-              Automation, Data Governance, Statistical Analysis
+              Currently working in the Node.js department with a focus on practical learning, industry-oriented projects, and skill development.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
