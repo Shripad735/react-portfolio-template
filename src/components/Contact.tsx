@@ -32,10 +32,14 @@ function Contact() {
         message: message
       };
 
-      emailjs.send('service_hh7es0t', 'template_im1bms6', templateParams, 'rrvcf1sHUgT5ehkl8').then(
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_hh7es0t';
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_im1bms6';
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'rrvcf1sHUgT5ehkl8';
+
+      emailjs.send(serviceId, templateId, templateParams, publicKey).then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully ! I will get back to you soon.');
+          alert('Message sent successfully! I will get back to you soon.');
         },
         (error) => {
           console.log('FAILED...', error);
