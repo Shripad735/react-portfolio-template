@@ -86,7 +86,7 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="Jun 2025 - Aug 2025 (Ongoing)"
+            date="Jun 2025 - July 2025"
             iconStyle={{ background: '#5000ca', color: 'white' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
