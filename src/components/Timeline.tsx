@@ -10,7 +10,7 @@ function Timeline() {
   return (
     <div id="history">
       <div className="items-container">
-        <h1>Career & Education</h1>
+        <h1>Education</h1>
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
@@ -54,6 +54,10 @@ function Timeline() {
               CGPA: 9.13 / 10
             </p>
           </VerticalTimelineElement>
+        </VerticalTimeline>
+
+        <h1>Career Journey</h1>
+        <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
