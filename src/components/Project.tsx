@@ -27,7 +27,7 @@ function Project() {
             <div className="project">
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><h2>SharePlate - Food Waste Reduction</h2></a>
-                <>A platform connecting restaurants with surplus food to NGOs to reduce waste. Built with MERN stack, it features real-time listings, location-based search, and JWT auth. Codebase Link <a href="https://github.com/Shripad735/SharePlateTSX" target="_blank" rel="noreferrer">here</a>. </>
+                <p>A platform connecting restaurants with surplus food to NGOs to reduce waste. Built with MERN stack, it features real-time listings, location-based search, and JWT auth. <strong>Codebase Link <a href="https://github.com/Shripad735/SharePlateTSX" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer"><img src={resumeAnalyzer} className="zoom" alt="thumbnail" width="100%"/></a>
@@ -47,12 +47,12 @@ function Project() {
             <div className="project">
                 <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><img src={ShopEase} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><h2>ShopEase - E-commerce Chatbot</h2></a>
-                <>Built an intelligent customer support chatbot using Streamlit and Groq AI. Features multi-language support, order tracking, product recommendations, voice responses, and real-time AI interactions for enhanced customer experience. Codebase Link <a href="https://github.com/Shripad735/ShopEase" target="_blank" rel="noreferrer">here</a>.</>
+                <p>Built an intelligent customer support chatbot using Streamlit and Groq AI. Features multi-language support, order tracking, product recommendations, voice responses, and real-time AI interactions for enhanced customer experience. <strong>Codebase Link <a href="https://github.com/Shripad735/ShopEase" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://shripad735.github.io/comp-network/" target="_blank" rel="noreferrer"><img src={NetworkVisualizer} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://shripad735.github.io/comp-network/" target="_blank" rel="noreferrer"><h2>Network Visualizer</h2></a>
-                <>An interactive educational platform for learning computer networking concepts. Features line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, subnet calculator, and network mapping. Built with React.js and Tailwind CSS. Codebase Link <a href="https://github.com/Shripad735/comp-network" target="_blank" rel="noreferrer">here</a>.</>
+                <p>An interactive educational platform for learning computer networking concepts. Features line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, subnet calculator, and network mapping. Built with React.js and Tailwind CSS. <strong>Codebase Link <a href="https://github.com/Shripad735/comp-network" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
         </div>
     </div>
