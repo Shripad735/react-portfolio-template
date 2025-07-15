@@ -22,7 +22,7 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer"><img src={projectPlanner} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer"><h2>Project Planner</h2></a>
-                <p>Developed a collaborative project management web app with MERN stack and MySQL. Features dual user roles for task assignment and completion verification, streamlining project workflows.</p>
+                <p>Developed a collaborative project management web app with MERN stack and MySQL. Features dual user roles for task assignment and completion verification, streamlining project workflows. <strong>Codebase Link <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
@@ -32,12 +32,12 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer"><img src={resumeAnalyzer} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer"><h2>Resume Analyzer - Python</h2></a>
-                <p>Built a resume analyzer using Python, NLTK, and Streamlit. It uses NLP for skill assessment, provides smart suggestions, and features a dashboard for insights.</p>
+                <p>Built a resume analyzer using Python, NLTK, and Streamlit. It uses NLP for skill assessment, provides smart suggestions, and features a dashboard for insights. <strong>Codebase Link <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Shripad735/Hospital-Management-System" target="_blank" rel="noreferrer"><img src={hospitalmsystem} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Shripad735/Hospital-Management-System" target="_blank" rel="noreferrer"><h2>Hospital Management System</h2></a>
-                <p>A Hospital Management System using Java, Servlets, and MySQL. Features patient records, appointments, billing, and user auth. Deployed on Apache Tomcat.</p>
+                <p>A Hospital Management System using Java, Servlets, and MySQL. Features patient records, appointments, billing, and user auth. Deployed on Apache Tomcat. <strong>Codebase Link <a href="https://github.com/Shripad735/Hospital-Management-System" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://medium.com/@shripadkhandare/automate-your-mern-app-deployment-on-aws-with-cloudformation-a-ci-cd-pipeline-439eae6f8953" target="_blank" rel="noreferrer"><img src={cicdPipeline} className="zoom" alt="thumbnail" width="100%"/></a>
