@@ -5,6 +5,8 @@ import shareplate from '../assets/images/Shareplate.png';
 import resumeAnalyzer from '../assets/images/ResumeAnalyzer.png';
 import cicdPipeline from '../assets/images/CICD.jpg';
 import hospitalmsystem from '../assets/images/hospital-management-system-poster.png';
+import ShopEase from '../assets/images/shopease.png';
+import NetworkVisualizer from '../assets/images/compnetwork.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
@@ -23,9 +25,9 @@ function Project() {
                 <p>Developed a collaborative project management web app with MERN stack and MySQL. Features dual user roles for task assignment and completion verification, streamlining project workflows.</p>
             </div>
             <div className="project">
-                <a href="https://shareplate.shripadkhandare.in" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://shareplate.shripadkhandare.in" target="_blank" rel="noreferrer"><h2>SharePlate - Food Waste Reduction</h2></a>
-                <p>A platform connecting restaurants with surplus food to NGOs to reduce waste. Built with MERN stack, it features real-time listings, location-based search, and JWT auth.</p>
+                <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><h2>SharePlate - Food Waste Reduction</h2></a>
+                <>A platform connecting restaurants with surplus food to NGOs to reduce waste. Built with MERN stack, it features real-time listings, location-based search, and JWT auth. Codebase Link <a href="https://github.com/Shripad735/SharePlateTSX" target="_blank" rel="noreferrer">here</a>. </>
             </div>
             <div className="project">
                 <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer"><img src={resumeAnalyzer} className="zoom" alt="thumbnail" width="100%"/></a>
@@ -41,6 +43,16 @@ function Project() {
                 <a href="https://medium.com/@shripadkhandare/automate-your-mern-app-deployment-on-aws-with-cloudformation-a-ci-cd-pipeline-439eae6f8953" target="_blank" rel="noreferrer"><img src={cicdPipeline} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://medium.com/@shripadkhandare/automate-your-mern-app-deployment-on-aws-with-cloudformation-a-ci-cd-pipeline-439eae6f8953" target="_blank" rel="noreferrer"><h2>MERN App CI/CD Automation with AWS</h2></a>
                 <p>Automated CI/CD pipeline for a MERN app on AWS using CloudFormation, CodePipeline, CodeBuild, and CodeDeploy. Wrote a Medium article detailing the process.</p>
+            </div>
+            <div className="project">
+                <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><img src={ShopEase} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><h2>ShopEase - E-commerce Chatbot</h2></a>
+                <p>Built an intelligent customer support chatbot using Streamlit and Groq AI. Features multi-language support, order tracking, product recommendations, voice responses, and real-time AI interactions for enhanced customer experience.Codebase Link <a href="https://github.com/Shripad735/ShopEase " target="_blank" rel="noreferrer">here</a>.</p>
+            </div>
+            <div className="project">
+                <a href="https://shripad735.github.io/comp-network/" target="_blank" rel="noreferrer"><img src={NetworkVisualizer} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://shripad735.github.io/comp-network/" target="_blank" rel="noreferrer"><h2>Network Visualizer</h2></a>
+                <>An interactive educational platform for learning computer networking concepts. Features line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, subnet calculator, and network mapping. Built with React.js and Tailwind CSS. Codebase Link <a href="https://github.com/Shripad735/comp-network" target="_blank" rel="noreferrer">here</a>.</>
             </div>
         </div>
     </div>
