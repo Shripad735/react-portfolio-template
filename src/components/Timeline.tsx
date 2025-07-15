@@ -109,7 +109,7 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Developer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Colgate Global Business Services Pvt. Ltd. (CGBS) | Colgate-Palmolive | GSSO Team </h4>
+            <h4 className="vertical-timeline-element-subtitle">Colgate Global Business Services Pvt. Ltd. (CGBS)   Colgate-Palmolive | GSSO Team (Hybrid) </h4>
             <p>
               Currently contributing to backend development using Node.js and Express.js as part of the GSSO team. Engaged in learning new technologies and supporting digital application initiatives within Colgate-Palmolive.
             </p>
