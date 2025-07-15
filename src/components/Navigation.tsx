@@ -106,7 +106,7 @@ function Navigation({parentToChild, modeChange}: any) {
             <Button 
               key="resume"
               component="a"
-              href="https://drive.google.com/file/d/1AmLqjNSht74s-REtt2D81zGXGWx9dM8L/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1iI4UhQEo9sKmJ0IKnbf7z5RePKn9qbx-/view?usp=sharing" 
               target="_blank" 
               sx={{ color: '#fff' }}
             >

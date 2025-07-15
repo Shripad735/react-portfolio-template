@@ -96,6 +96,20 @@ function Timeline() {
               Currently working in the Node.js department with a focus on practical learning, industry-oriented projects, and skill development.
             </p>
           </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="Jul 2025 - (Ongoing)"
+            iconStyle={{ background: '#5000ca', color: 'white' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Developer Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Colgate Global Business Services Pvt. Ltd. (CGBS) | Colgate-Palmolive | GSSO Team | Digital Applications Development Dept.</h4>
+            <p>
+              Currently contributing to backend development using Node.js and Express.js as part of the GSSO team. Engaged in learning new technologies and supporting digital application initiatives within Colgate-Palmolive.
+            </p>
+          </VerticalTimelineElement>
         </VerticalTimeline>
       </div>
     </div>
