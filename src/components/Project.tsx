@@ -47,7 +47,7 @@ function Project() {
             <div className="project">
                 <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><img src={ShopEase} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://shopease-se-hackethon.streamlit.app" target="_blank" rel="noreferrer"><h2>ShopEase - E-commerce Chatbot</h2></a>
-                <p>Built an intelligent customer support chatbot using Streamlit and Groq AI. Features multi-language support, order tracking, product recommendations, voice responses, and real-time AI interactions for enhanced customer experience.Codebase Link <a href="https://github.com/Shripad735/ShopEase " target="_blank" rel="noreferrer">here</a>.</p>
+                <>Built an intelligent customer support chatbot using Streamlit and Groq AI. Features multi-language support, order tracking, product recommendations, voice responses, and real-time AI interactions for enhanced customer experience. Codebase Link <a href="https://github.com/Shripad735/ShopEase" target="_blank" rel="noreferrer">here</a>.</>
             </div>
             <div className="project">
                 <a href="https://shripad735.github.io/comp-network/" target="_blank" rel="noreferrer"><img src={NetworkVisualizer} className="zoom" alt="thumbnail" width="100%"/></a>
