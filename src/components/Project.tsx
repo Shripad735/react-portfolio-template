@@ -20,9 +20,9 @@ function Project() {
                 <p>Built a WhatsApp-based reporting system for traffic issues for PCMC Traffic Division. Features include GPS-based report routing, bilingual interface, real-time alerts, and an admin dashboard with analytics.</p>
             </div>
             <div className="project">
-                <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer"><img src={projectPlanner} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer"><h2>Project Planner</h2></a>
-                <p>Developed a collaborative project management web app with MERN stack and MySQL. Features dual user roles for task assignment and completion verification, streamlining project workflows. <strong>Codebase Link <a href="https://github.com/Shripad735/Project-Planner" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
+                <a href="https://super-30-project-tracker-4kji.vercel.app" target="_blank" rel="noreferrer"><img src={projectPlanner} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://super-30-project-tracker-4kji.vercel.app" target="_blank" rel="noreferrer"><h2>Project Planner</h2></a>
+                <p>Developed a collaborative project management web app with MERN stack and MySQL. Features dual user roles for task assignment and completion verification, streamlining project workflows. <strong>Codebase Link <a href="https://github.com/OMpawar140/Super-30-Project-Tracker" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
