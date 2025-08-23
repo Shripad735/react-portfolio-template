@@ -1,6 +1,9 @@
 import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import CodeIcon from '@mui/icons-material/Code';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import SchoolIcon from '@mui/icons-material/School';
 import Button from '@mui/material/Button';
 import '../assets/styles/Main.scss';
 import Myself from '../assets/images/Myself.jpg';
@@ -17,6 +20,8 @@ function Main() {
           <div className="social_icons">
             <a href="https://github.com/Shripad735" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/shripad-khandare-39a2a2203/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://leetcode.com/u/Shripad735/" target="_blank" rel="noreferrer"><CodeIcon/></a>
+            <a href="https://www.hackerrank.com/profile/shripad_khandare" target="_blank" rel="noreferrer"><TerminalIcon/></a>
           </div>
           <h1>Shripad Khandare</h1>
           <p>Backend Developer (Node.js)</p>
@@ -25,6 +30,9 @@ function Main() {
           <div className="mobile_social_icons">
             <a href="https://github.com/Shripad735" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/shripad-khandare-39a2a2203/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://leetcode.com/u/Shripad735/" target="_blank" rel="noreferrer"><CodeIcon/></a>
+            <a href="https://www.hackerrank.com/profile/shripad_khandare" target="_blank" rel="noreferrer"><TerminalIcon/></a>
+            <a href="https://www.naukri.com/code360/profile/Shripad735" target="_blank" rel="noreferrer"><SchoolIcon/></a>
           </div>
         </div>
       </div>
