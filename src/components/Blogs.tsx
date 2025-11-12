@@ -3,8 +3,8 @@ import '../assets/styles/Blogs.scss';
 
 const articles = [
     {
-        title: "How Google Won the AI Race by Never Really Leaving It",
-        link: "https://medium.com/@shripadkhandare/how-google-won-the-ai-race-by-never-really-leaving-it-f3626020a4d6"
+        title: "Google Just Solved AI’s Memory Problem (And It’s Simpler Than You Think)",
+        link: "https://medium.com/@shripadkhandare/google-just-solved-ais-memory-problem-and-it-s-simpler-than-you-think-9430a63c888d"
     },
     {
         title: "Building Your First Serverless CRUD API on AWS: A Beginner’s Guide",
@@ -15,8 +15,16 @@ const articles = [
         link: "https://medium.com/@shripadkhandare/a-beginners-guide-to-creating-aws-vpc-components-using-the-cli-45eca99a3233"
     },
     {
+        title: "20 AI Concepts Every Beginner Should Know.",
+        link: "https://medium.com/@shripadkhandare/20-ai-concepts-every-beginner-should-know-39edcab25304"
+    },
+    {
         title: "Implementing Single Sign-On (SSO) in AWS: A Step-by-Step Guide",
         link: "https://medium.com/@shripadkhandare/implementing-single-sign-on-sso-in-aws-a-step-by-step-guide-b648269afbd9"
+    },
+    {
+        title: "How Google Won the AI Race by Never Really Leaving It",
+        link: "https://medium.com/@shripadkhandare/how-google-won-the-ai-race-by-never-really-leaving-it-f3626020a4d6"
     },
     {
         title: "Comprehensive Guide to Recovering EC2 Instance Access: Key Pair Replacement for Beginners",
