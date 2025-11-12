@@ -4,7 +4,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CodeIcon from '@mui/icons-material/Code';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SchoolIcon from '@mui/icons-material/School';
-import Button from '@mui/material/Button';
 import '../assets/styles/Main.scss';
 import Myself from '../assets/images/Myself.jpg';
 
