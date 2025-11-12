@@ -15,9 +15,17 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import { resumeConfig } from './Resume';
 
 const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Articles', 'articles'], ['Contact', 'contact']];
+const navItems = [
+  ['Expertise', 'expertise'], 
+  ['History', 'history'], 
+  ['Projects', 'projects'], 
+  ['Articles', 'articles'], 
+  ['Contact', 'contact'],
+  [resumeConfig.label, resumeConfig.url, resumeConfig.isExternal]
+];
 
 function Navigation({parentToChild, modeChange}: any) {
 
@@ -57,23 +65,28 @@ function Navigation({parentToChild, modeChange}: any) {
     }
   };
 
+  const handleNavItemClick = (item: any[]) => {
+    if (item[2]) {
+      // External link
+      window.open(item[1], '_blank');
+    } else {
+      // Internal section
+      scrollToSection(item[1]);
+    }
+  };
+
   const drawer = (
     <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <p className="mobile-menu-top"><ListIcon/>Menu</p>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => scrollToSection(item[1])}>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavItemClick(item)}>
               <ListItemText primary={item[0]} />
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItem key="resume" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} component="a" href="https://drive.google.com/file/d/1AmLqjNSht74s-REtt2D81zGXGWx9dM8L/view?usp=sharing" target="_blank">
-              <ListItemText primary="Resume" />
-            </ListItemButton>
-        </ListItem>
       </List>
     </Box>
   );
@@ -98,20 +111,11 @@ function Navigation({parentToChild, modeChange}: any) {
             <DarkModeIcon onClick={() => modeChange()}/>
           )}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
+            {navItems.map((item, index) => (
+              <Button key={index} onClick={() => handleNavItemClick(item)} sx={{ color: '#fff' }}>
                 {item[0]}
               </Button>
             ))}
-            <Button 
-              key="resume"
-              component="a"
-              href="https://drive.google.com/file/d/1AixKfDeqL7BCg5nANJGV-cTMl0yGWgIl/view?usp=sharing" 
-              target="_blank" 
-              sx={{ color: '#fff' }}
-            >
-              Resume
-            </Button>
           </Box>
         </Toolbar>
       </AppBar>
