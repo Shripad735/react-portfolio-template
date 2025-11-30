@@ -1,5 +1,4 @@
 import React from "react";
-import ReadingJourney from "./ReadingJourney";
 import '../assets/styles/Blogs.scss';
 
 const articles = [
@@ -36,7 +35,6 @@ const articles = [
 function Blogs() {
     return (
         <div className="blogs-container" id="articles">
-            <ReadingJourney />
             <h1>My Articles</h1>
             <div className="articles-list">
                 {articles.map((article, index) => (
