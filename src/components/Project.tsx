@@ -2,6 +2,8 @@ import React from "react";
 import trafficBuddy from '../assets/images/trafficbuddy.png';
 import projectPlanner from '../assets/images/project-tracker.png';
 import shareplate from '../assets/images/Shareplate.png';
+import emiCalculator from '../assets/images/emiCalculator.png';
+import apiZombie from '../assets/images/apiZombie.png';
 import resumeAnalyzer from '../assets/images/ResumeAnalyzer.png';
 import cicdPipeline from '../assets/images/CICD.jpg';
 import hospitalmsystem from '../assets/images/hospital-management-system-poster.png';
@@ -28,6 +30,16 @@ function Project() {
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><img src={shareplate} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://techathon-frontend-tau.vercel.app" target="_blank" rel="noreferrer"><h2>SharePlate - Food Waste Reduction</h2></a>
                 <p>A platform connecting restaurants with surplus food to NGOs to reduce waste. Built with MERN stack, it features real-time listings, location-based search, and JWT auth. <strong>Codebase Link <a href="https://github.com/Shripad735/SharePlateTSX" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
+            </div>
+            <div className="project">
+                <a href="https://github.com/Shripad735/EMI-Calculator" target="_blank" rel="noreferrer"><img src={emiCalculator} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://github.com/Shripad735/EMI-Calculator" target="_blank" rel="noreferrer"><h2>Financial Calculator Suite</h2></a>
+                <p>A comprehensive full-stack mobile app featuring seven essential financial tools including EMI, SIP, PPF, and GST calculators optimized for Indian users. Built with React Native Expo and Node.js/MongoDB backend, featuring Firebase phone authentication and guest mode. <strong>Codebase Link <a href="https://github.com/Shripad735/EMI-Calculator" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
+            </div>
+            <div className="project">
+                <a href="https://kiroween-api-zombie-1tj4.vercel.app/" target="_blank" rel="noreferrer"><img src={apiZombie} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://kiroween-api-zombie-1tj4.vercel.app/" target="_blank" rel="noreferrer"><h2>APIZombie - AI-Powered API Testing</h2></a>
+                <p>An all-in-one testing platform unifying REST, GraphQL, and gRPC protocols. Features Groq AI for generating requests from plain English, visual workflow builder, and comprehensive analytics. Built with MERN stack and Vite. <strong>Codebase Link <a href="https://github.com/Shripad735/Kiroween-APIZombie" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline'}}>here</a></strong>.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Shripad735/Resume-Analyser-Python" target="_blank" rel="noreferrer"><img src={resumeAnalyzer} className="zoom" alt="thumbnail" width="100%"/></a>

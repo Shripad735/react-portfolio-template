@@ -36,6 +36,9 @@ function Blogs() {
     return (
         <div className="blogs-container" id="articles">
             <h1>My Articles</h1>
+            <div className="goodreads-section">
+                <p>📚 Check out my reading journey on <a href="https://www.goodreads.com/user/show/195633318-shripad-khandare" target="_blank" rel="noreferrer" style={{color: '#5000ca', textDecoration: 'underline', fontWeight: 'bold'}}>Goodreads</a></p>
+            </div>
             <div className="articles-list">
                 {articles.map((article, index) => (
                     <div className="article-item" key={index}>
