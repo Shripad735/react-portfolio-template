@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CodeIcon from '@mui/icons-material/Code';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SchoolIcon from '@mui/icons-material/School';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import '../assets/styles/Main.scss';
 import Myself from '../assets/images/Myself.jpg';
 
@@ -21,6 +22,7 @@ function Main() {
             <a href="https://www.linkedin.com/in/shripad-khandare-39a2a2203/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
             <a href="https://leetcode.com/u/Shripad735/" target="_blank" rel="noreferrer"><CodeIcon/></a>
             <a href="https://www.hackerrank.com/profile/shripad_khandare" target="_blank" rel="noreferrer"><TerminalIcon/></a>
+            <a href="https://www.goodreads.com/user/show/195633318-shripad-khandare" target="_blank" rel="noreferrer"><MenuBookIcon/></a>
           </div>
           <h1>Shripad Khandare</h1>
           <p>Backend Developer (Node.js)</p>
@@ -32,6 +34,7 @@ function Main() {
             <a href="https://leetcode.com/u/Shripad735/" target="_blank" rel="noreferrer"><CodeIcon/></a>
             <a href="https://www.hackerrank.com/profile/shripad_khandare" target="_blank" rel="noreferrer"><TerminalIcon/></a>
             <a href="https://www.naukri.com/code360/profile/Shripad735" target="_blank" rel="noreferrer"><SchoolIcon/></a>
+            <a href="https://www.goodreads.com/user/show/195633318-shripad-khandare" target="_blank" rel="noreferrer"><MenuBookIcon/></a>
           </div>
         </div>
       </div>
