@@ -1,5 +1,31 @@
 .reading-journey-container {
-    margin-bottom: 2rem;
+    margin: 4rem auto;
+    max-width: 900px;
+    padding: 3rem 2rem;
     text-align: center;
-    padding: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        color: inherit;
+    }
+
+    a {
+        color: #5000ca;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+    }
 }

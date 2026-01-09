@@ -36,8 +36,8 @@ function App() {
             <Expertise/>
             <Timeline/>
             <Project/>
-            <ReadingJourney/>
             <Blogs/>
+            <ReadingJourney/>
             <Contact/>
         </FadeIn>
         <Footer />

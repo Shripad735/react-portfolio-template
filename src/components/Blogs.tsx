@@ -3,15 +3,19 @@ import '../assets/styles/Blogs.scss';
 
 const articles = [
     {
-        title: "Google Just Solved AI’s Memory Problem (And It’s Simpler Than You Think)",
+        title: "Your Password Can Be Stolen. Your Passkey Can't. Here's Why.",
+        link: "https://medium.com/@shripadkhandare/your-password-can-be-stolen-your-passkey-cant-here-s-why-d7a8952f4ddd"
+    },
+    {
+        title: "Google Just Solved AI's Memory Problem (And It's Simpler Than You Think)",
         link: "https://medium.com/@shripadkhandare/google-just-solved-ais-memory-problem-and-it-s-simpler-than-you-think-9430a63c888d"
     },
     {
-        title: "Building Your First Serverless CRUD API on AWS: A Beginner’s Guide",
+        title: "Building Your First Serverless CRUD API on AWS: A Beginner's Guide",
         link: "https://medium.com/@shripadkhandare/building-your-first-serverless-crud-api-on-aws-a-beginners-guide-75e44bc6a633"
     },
     {
-        title: "A Beginner’s Guide to Creating AWS VPC Components Using the CLI",
+        title: "A Beginner's Guide to Creating AWS VPC Components Using the CLI",
         link: "https://medium.com/@shripadkhandare/a-beginners-guide-to-creating-aws-vpc-components-using-the-cli-45eca99a3233"
     },
     {

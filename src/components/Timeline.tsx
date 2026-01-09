@@ -108,10 +108,10 @@ function Timeline() {
             iconStyle={{ background: '#5000ca', color: 'white' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Developer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Colgate Global Business Services Pvt. Ltd. (CGBS)   Colgate-Palmolive | GSSO Team (Hybrid) </h4>
+            <h3 className="vertical-timeline-element-title">Digital Applications Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Colgate Global Business Services Pvt. Ltd. (CGBS) | GSSO Team (Hybrid)</h4>
             <p>
-              Currently contributing to backend development using Node.js and Express.js as part of the GSSO team. Engaged in learning new technologies and supporting digital application initiatives within Colgate-Palmolive.
+              Working in Enterprise Automation, Digital Marketing, and Data Analytics. Automated the end-to-end intake process for GDA Marketing Applications using Google Apps Script and Jira REST APIs, handling 13+ request archetypes across platforms like SFMC, SFDC, Gigya, and Web Tagging. Developed a Customer Engagement Dashboard with interactive visualizations and dynamic filtering. Provided application support for a AEM Redirects Console (Custom NodeJS application), including debugging, and creating comprehensive Windows setup documentation. 
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
