@@ -11,18 +11,30 @@ const labelsFirst = [
     "Express.js",
     "Python",
     "Java",
+    "HTML",
+    "CSS",
+    "ReactJS",
+    "REST APIs",
     "MySQL",
     "MongoDB",
-    "REST-API",
+    "DynamoDB",
 ];
 
 const labelsSecond = [
-    "AWS",
+    "AWS EC2",
+    "S3",
+    "IAM",
+    "VPC",
+    "Lambda",
+    "API Gateway",
+    "Auto Scaling",
+    "Load Balancing",
+    "CloudFormation",
+    "AWS Parameter Store",
     "Terraform",
-    "Linux",
+    "Docker",
     "Git",
     "GitHub",
-    "CloudFormation",
     "CodePipeline",
     "CodeBuild",
     "CodeDeploy",
@@ -30,11 +42,16 @@ const labelsSecond = [
 
 const labelsThird = [
     "C++",
+    "Java",
     "Python",
     "Data Structures",
     "Algorithms",
     "LeetCode",
     "HackerRank",
+    "Jira",
+    "Google Apps Script",
+    "Twilio",
+    "Google Maps API",
 ];
 
 function Expertise() {
@@ -46,7 +63,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faServer} size="3x"/>
                     <h3>Backend Development</h3>
-                    <p>I specialize in building robust and scalable server-side applications. My expertise lies in creating RESTful APIs, managing databases, and implementing business logic using technologies like Node.js and Python.</p>
+                    <p>I specialize in building robust and scalable server-side applications. My expertise lies in creating RESTful APIs, managing databases, and implementing business logic using technologies like Node.js, Express.js, and Python.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -57,8 +74,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>I have experience in automating CI/CD pipelines and infrastructure provisioning on AWS. I help set up testing, CI/CD pipelines, and deployment automation to support successful Go-Live.</p>
+                    <h3>Cloud & DevOps</h3>
+                    <p>I have extensive experience with AWS services and infrastructure automation. I specialize in setting up CI/CD pipelines, managing cloud resources, and implementing scalable architectures using Infrastructure as Code.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -69,8 +86,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faCode} size="3x"/>
-                    <h3>Problem Solving & DSA</h3>
-                    <p>I am passionate about problem-solving and have a strong foundation in Data Structures and Algorithms. I actively practice on platforms like LeetCode and HackerRank to hone my skills.</p>
+                    <h3>Problem Solving & Tools</h3>
+                    <p>I am passionate about problem-solving with a strong foundation in Data Structures and Algorithms. I actively practice on competitive platforms and leverage various tools and APIs for building integrated solutions.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
@@ -79,6 +96,8 @@ function Expertise() {
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
     );
