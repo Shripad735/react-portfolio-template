@@ -26,7 +26,7 @@ function Main() {
           </div>
           <h1>Shripad Khandare</h1>
           <p>Backend Developer (Node.js)</p>
-          <p>Cloud Enthusiast</p>
+          <p>Cloud & DevOps Enthusiast</p>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/Shripad735" target="_blank" rel="noreferrer"><GitHubIcon/></a>
