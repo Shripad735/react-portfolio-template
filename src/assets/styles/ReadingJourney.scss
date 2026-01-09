@@ -29,3 +29,21 @@
         }
     }
 }
+
+.dark-mode .reading-journey-container {
+    h1 {
+        color: #ffffff;
+    }
+
+    p {
+        color: #e0e0e0;
+    }
+
+    a {
+        color: #a78bfa;
+
+        &:hover {
+            color: #c4b5fd;
+        }
+    }
+}
