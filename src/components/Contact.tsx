@@ -1,10 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
 import emailjs from '@emailjs/browser';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
 
 function Contact() {
 
@@ -16,7 +12,7 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -57,59 +53,55 @@ function Contact() {
       <div className="items-container">
         <div className="contact_wrapper">
           <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen! You can reach me at shripad.khandare@mitaoe.ac.in or use the form below.</p>
-          <Box
+          <p>Got a project waiting to be realized? Let's collaborate and make it happen! You can reach me at shripadkhandare2020@gmail.com or use the form below.</p>
+          <form
             ref={form}
-            component="form"
-            noValidate
+            noValidate={true}
             autoComplete="off"
             className='contact-form'
+            onSubmit={sendEmail}
           >
             <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email" : ""}
-              />
+              <div className="form-group">
+                <label htmlFor="contact-name">Your Name</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  placeholder="What's your name?"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  aria-invalid={nameError}
+                />
+                {nameError && <span className="error-text">Please enter your name</span>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="contact-email">Email</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  placeholder="How can I reach you?"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  aria-invalid={emailError}
+                />
+                {emailError && <span className="error-text">Please enter your email</span>}
+              </div>
             </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
+            <div className="form-group">
+              <label htmlFor="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                placeholder="Send me any inquiries or questions"
+                rows={8}
+                className="body-form"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                aria-invalid={messageError}
+              />
+              {messageError && <span className="error-text">Please enter the message</span>}
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
