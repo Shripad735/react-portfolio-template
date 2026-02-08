@@ -54,6 +54,16 @@
   color: var(--text-tertiary) !important;
 }
 
+@media (max-width: 900px) {
+  .vertical-timeline-element-content {
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 3px var(--bg-page), 0 4px 10px rgba(15, 23, 42, 0.09) !important;
+  }
+}
+
 @media screen and (max-width: 1170px) {
   .vertical-timeline-element-date {
     margin-top: 0.75rem;

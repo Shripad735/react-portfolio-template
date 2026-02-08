@@ -19,6 +19,8 @@
 .project {
   display: flex;
   flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
@@ -98,4 +100,24 @@
   background: var(--bg-muted);
   border: 1px solid var(--border-soft);
   border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .project {
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+    transition: border-color 0.24s ease, box-shadow 0.24s ease;
+  }
+
+  .project:hover {
+    transform: none;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.09);
+  }
+
+  .project .zoom {
+    transition: none;
+  }
+
+  .project:hover .zoom {
+    transform: none;
+  }
 }

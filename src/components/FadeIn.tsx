@@ -24,8 +24,8 @@ export default function FadeIn({
   className,
   childClassName,
   transitionDuration = 600,
-  threshold = 0.15,
-  rootMargin = "0px 0px -10% 0px",
+  threshold = 0.01,
+  rootMargin = "0px 0px -2% 0px",
   onComplete,
 }: PropsWithChildren<Props>) {
   const WrapperTag = wrapperTag || "div";
@@ -34,6 +34,13 @@ export default function FadeIn({
 
   useEffect(() => {
     if (!refs.current.length) return undefined;
+
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      refs.current.forEach((element) => {
+        if (element) element.classList.add("is-visible");
+      });
+      return undefined;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,12 +57,20 @@ export default function FadeIn({
       if (element) observer.observe(element);
     });
 
+    // Failsafe for very tall sections or mobile observer edge-cases.
+    const revealFallbackTimer = window.setTimeout(() => {
+      refs.current.forEach((element) => {
+        if (element) element.classList.add("is-visible");
+      });
+    }, 1600);
+
     const completeTimer = window.setTimeout(() => {
       if (onComplete) onComplete();
     }, transitionDuration);
 
     return () => {
       observer.disconnect();
+      window.clearTimeout(revealFallbackTimer);
       window.clearTimeout(completeTimer);
     };
   }, [children, onComplete, rootMargin, threshold, transitionDuration]);

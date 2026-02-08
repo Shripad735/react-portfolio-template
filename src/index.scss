@@ -110,6 +110,13 @@ h5 {
   transform: translateY(0);
 }
 
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    transform: translateY(14px);
+    will-change: auto;
+  }
+}
+
 .light-mode {
   --bg-page: #f3efea;
   --bg-surface: #fdfaf6;

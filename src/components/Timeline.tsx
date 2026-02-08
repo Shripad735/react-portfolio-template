@@ -79,11 +79,16 @@ const iconStyle = {
 };
 
 function TimelineSection({ items, type }: { items: TimelineItem[]; type: "work" | "education" }) {
+  const disableTimelineAnimation =
+    typeof window !== "undefined" &&
+    (window.matchMedia("(max-width: 900px)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
   const icon = type === "work" ? faBriefcase : faGraduationCap;
   const className = type === "work" ? "vertical-timeline-element--work" : "vertical-timeline-element--education";
 
   return (
-    <VerticalTimeline>
+    <VerticalTimeline animate={!disableTimelineAnimation}>
       {items.map((item) => (
         <VerticalTimelineElement
           key={`${item.date}-${item.title}`}
