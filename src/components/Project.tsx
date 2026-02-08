@@ -10,7 +10,15 @@ import hospitalmsystem from '../assets/images/hospital-management-system-poster.
 import ShopEase from '../assets/images/shopease.png';
 import NetworkVisualizer from '../assets/images/compnetwork.png';
 import '../assets/styles/Project.scss';
-import Chip from '@mui/material/Chip';
+
+type ChipProps = {
+    label: string;
+    variant?: string;
+};
+
+function Chip({ label }: ChipProps) {
+    return <span className="project-tag">{label}</span>;
+}
 
 function Project() {
     return(

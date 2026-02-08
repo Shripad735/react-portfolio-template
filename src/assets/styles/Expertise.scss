@@ -1,154 +1,91 @@
 .skills-container {
-    padding: 5% 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  padding: var(--section-space) 0;
+}
 
-    svg {
-        color: white;
-    }
+.skills-container h1 {
+  font-size: clamp(1.85rem, 4vw, 2.7rem);
+  margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
 }
-  
-.skills-container .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
 }
-  
-.skills-container .skills-grid .skill {
-    align-items: center;
-    text-align: left;
+
+.skill {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  padding: 1.45rem 1.35rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
-  
-.chip {
-    color: rgb(39, 40, 34) !important;
-    background-color: white !important;
-    font-size: 0.8rem !important;
-    height: 25px !important;
-  
-    span {
-        font-family: 'Courier Prime', monospace;
-        color: rgb(39, 40, 34);
-    }
-  
-    svg {
-        height: 15px !important;
-    }
+
+.skill:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-soft));
+  box-shadow: var(--shadow-soft);
+}
+
+.skill svg {
+  color: var(--accent);
+  font-size: 2.1rem;
+}
+
+.skill h3 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.16rem;
+}
+
+.skill p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.7;
 }
 
 .flex-chips {
-    line-height: 2;
-    margin: 0.5;
-
-    .chip-title {
-        color: white;
-        padding-right: 10px;
-    }
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.48rem;
 }
 
-.flex-chips .MuiChip-root {
-    margin-right: 0.5em;
+.chip-title {
+  width: 100%;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
 }
 
-.flex-chips .MuiChip-outlined {
-    background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.44rem 0.72rem;
 }
 
-.flex-chips .MuiChip-outlined span {
-    color: rgb(39, 40, 34);
+@media (max-width: 1050px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media screen {
-    @media (max-width: 768px) {
-        .skills-container {
-            display: block;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-    
-        .skills-container .skills-grid {
-            display: initial;
-        }
-        
-        .skills-container .skills-grid .skill {
-            padding-bottom: 5%;
-        }
-    }
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 567px) {
-        .skills {
-            font-size: 12px;
-        }
-    }
-}
-
-.skillset-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
-
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        color: white;
-        text-align: center;
-    }
-
-    .skillset-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .skillset-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.08);
-            transform: translateX(5px);
-        }
-
-        strong {
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        span {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .skillset-section {
-        margin-top: 3rem;
-        padding-top: 2rem;
-
-        h2 {
-            font-size: 1.5rem;
-        }
-
-        .skillset-item {
-            padding: 0.8rem;
-
-            strong {
-                font-size: 1rem;
-            }
-
-            span {
-                font-size: 0.9rem;
-            }
-        }
-    }
+  .skill {
+    padding: 1.25rem 1.15rem;
+  }
 }

@@ -1,49 +1,32 @@
 .reading-journey-container {
-    margin: 4rem auto;
-    max-width: 900px;
-    padding: 3rem 2rem;
-    text-align: center;
-
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-    }
-
-    p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-        color: inherit;
-    }
-
-    a {
-        color: #5000ca;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-
-        &:hover {
-            text-decoration: underline;
-            opacity: 0.8;
-        }
-    }
+  width: var(--container-content);
+  margin: 0 auto;
+  padding: var(--section-space) clamp(1.2rem, 3vw, 2rem);
+  text-align: center;
+  border-radius: 26px;
+  border: 1px solid var(--border-soft);
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--bg-muted) 78%, transparent), transparent 58%),
+    var(--bg-surface);
+  box-shadow: var(--shadow-soft);
 }
 
-.dark-mode .reading-journey-container {
-    h1 {
-        color: #ffffff;
-    }
+.reading-journey-container h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  margin-bottom: 0.9rem;
+}
 
-    p {
-        color: #e0e0e0;
-    }
+.reading-journey-container p {
+  margin: 0 auto 0.8rem;
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
 
-    a {
-        color: #a78bfa;
+.reading-journey-container a {
+  color: var(--accent);
+  font-weight: 700;
+}
 
-        &:hover {
-            color: #c4b5fd;
-        }
-    }
+.reading-journey-container a:hover {
+  text-decoration: underline;
 }
