@@ -1,9 +1,10 @@
 .about-section {
   min-height: min(84vh, 780px);
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: minmax(190px, 240px) minmax(560px, 760px);
+  justify-content: center;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  gap: clamp(1.6rem, 3.2vw, 3rem);
   padding: clamp(2rem, 4vw, 3.5rem);
   border-radius: 28px;
   background:
@@ -15,8 +16,9 @@
 
 .about-section .image-wrapper {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
+  justify-self: center;
   border-radius: 50%;
   padding: 7px;
   background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 32%, transparent), rgba(255, 255, 255, 0));
@@ -34,6 +36,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: min(100%, 760px);
+  justify-self: start;
 }
 
 .hero-kicker {
@@ -139,10 +143,11 @@
     text-align: left;
     gap: 1.5rem;
     min-height: auto;
+    justify-content: initial;
   }
 
   .about-section .image-wrapper {
-    width: 140px;
-    height: 140px;
+    width: 154px;
+    height: 154px;
   }
 }
