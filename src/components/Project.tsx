@@ -49,9 +49,11 @@ function Project() {
                 </div>
             </div>
             <div className="project">
-                <a href="https://github.com/Shripad735/streamfetch" target="_blank" rel="noreferrer"><img {...imageProps} src={streamfetch} className="zoom" alt="StreamFetch desktop app" width="100%"/></a>
-                <a href="https://github.com/Shripad735/streamfetch" target="_blank" rel="noreferrer"><h2>StreamFetch - Advanced Desktop Media Downloader</h2></a>
-                <p>Built a secure Electron desktop app with a modern React + Tailwind UI for downloading media using yt-dlp and ffmpeg. Implemented IPC-safe architecture, robust background queue/process handling, cookie-based auth recovery for restricted content, and automated Windows release delivery through GitHub Actions.</p>
+                <a href="https://shripad735.github.io/streamfetch/" target="_blank" rel="noreferrer"><img {...imageProps} src={streamfetch} className="zoom" alt="StreamFetch desktop app" width="100%"/></a>
+                <a href="https://shripad735.github.io/streamfetch/" target="_blank" rel="noreferrer"><h2>StreamFetch - Advanced Desktop Media Downloader</h2></a>
+                <p>Built a secure Electron desktop app with a modern React + Tailwind UI for downloading media using yt-dlp and ffmpeg. Implemented IPC-safe architecture, robust background queue/process handling, cookie-based auth recovery for restricted content, and automated Windows release delivery through GitHub Actions.  
+                    <strong>Codebase Link <a href="https://github.com/Shripad735/streamfetch" target="_blank" rel="noreferrer">here</a></strong>.
+                </p>
                 <div className="project-tags">
                     <Chip label="Electron" variant="outlined" />
                     <Chip label="React" variant="outlined" />
