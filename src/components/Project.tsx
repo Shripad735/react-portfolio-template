@@ -9,6 +9,7 @@ import cicdPipeline from '../assets/images/CICD.jpg';
 import hospitalmsystem from '../assets/images/hospital-management-system-poster.png';
 import ShopEase from '../assets/images/shopease.png';
 import NetworkVisualizer from '../assets/images/compnetwork.png';
+import streamfetch from '../assets/images/Streamfetch.png';
 import '../assets/styles/Project.scss';
 
 type ChipProps = {
@@ -45,6 +46,21 @@ function Project() {
                     <Chip label="JWT" variant="outlined" />
                     <Chip label="GPS" variant="outlined" />
                     <Chip label="Data Visualization" variant="outlined" />
+                </div>
+            </div>
+            <div className="project">
+                <a href="https://github.com/Shripad735/streamfetch" target="_blank" rel="noreferrer"><img {...imageProps} src={streamfetch} className="zoom" alt="StreamFetch desktop app" width="100%"/></a>
+                <a href="https://github.com/Shripad735/streamfetch" target="_blank" rel="noreferrer"><h2>StreamFetch - Advanced Desktop Media Downloader</h2></a>
+                <p>Built a secure Electron desktop app with a modern React + Tailwind UI for downloading media using yt-dlp and ffmpeg. Implemented IPC-safe architecture, robust background queue/process handling, cookie-based auth recovery for restricted content, and automated Windows release delivery through GitHub Actions.</p>
+                <div className="project-tags">
+                    <Chip label="Electron" variant="outlined" />
+                    <Chip label="React" variant="outlined" />
+                    <Chip label="Node.js" variant="outlined" />
+                    <Chip label="Tailwind CSS" variant="outlined" />
+                    <Chip label="Vite" variant="outlined" />
+                    <Chip label="yt-dlp" variant="outlined" />
+                    <Chip label="ffmpeg" variant="outlined" />
+                    <Chip label="GitHub Actions" variant="outlined" />
                 </div>
             </div>
             <div className="project">
