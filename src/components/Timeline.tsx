@@ -41,12 +41,12 @@ const career: TimelineItem[] = [
     subtitle: "Career Credentials",
     details: "Contributed to a Full Stack Web Project called Project Planner. Gained experience in front-end development with React.js, backend with Express.js, and database management with MySQL.",
   },
-  {
-    date: "Jun 2024 - Sep 2024",
-    title: "AICTE Cloud Virtual Internship",
-    subtitle: "Remote",
-    details: "Mastered core AWS services like EC2, S3, RDS, and VPC. Gained experience in automating infrastructure using CloudFormation and enhanced skills in cloud cost management.",
-  },
+  // {
+  //   date: "Jun 2024 - Sep 2024",
+  //   title: "AICTE Cloud Virtual Internship",
+  //   subtitle: "Remote",
+  //   details: "Mastered core AWS services like EC2, S3, RDS, and VPC. Gained experience in automating infrastructure using CloudFormation and enhanced skills in cloud cost management.",
+  // },
   {
     date: "Jun 2025 - July 2025",
     title: "Summer Intern - Node.js",
