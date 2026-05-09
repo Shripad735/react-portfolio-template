@@ -10,6 +10,7 @@ import hospitalmsystem from '../assets/images/hospital-management-system-poster.
 import ShopEase from '../assets/images/shopease.png';
 import NetworkVisualizer from '../assets/images/compnetwork.png';
 import streamfetch from '../assets/images/Streamfetch.png';
+import clipstack from '../assets/images/Clipstack.png';
 import '../assets/styles/Project.scss';
 
 type ChipProps = {
@@ -63,6 +64,21 @@ function Project() {
                     <Chip label="yt-dlp" variant="outlined" />
                     <Chip label="ffmpeg" variant="outlined" />
                     <Chip label="GitHub Actions" variant="outlined" />
+                </div>
+            </div>
+            <div className="project">
+                <a href="https://shripad735.github.io/ClipStack/" target="_blank" rel="noreferrer"><img {...imageProps} src={clipstack} className="zoom" alt="ClipStack desktop app" width="100%"/></a>
+                <a href="https://shripad735.github.io/ClipStack/" target="_blank" rel="noreferrer"><h2>ClipStack</h2></a>
+                <p>Built ClipStack, a lightweight and local-first clipboard manager for Windows using Tauri (Rust) and React + Vite. The application provides persistent clipboard history with fast fuzzy search, pinned items, reusable snippets, and keyboard-first workflows through a global overlay shortcut. Implemented local SQLite-based storage to ensure all clipboard data remains on-device with no cloud dependency. <strong>Codebase Link <a href="https://github.com/Shripad735/ClipStack" target="_blank" rel="noreferrer">here</a></strong>.</p>
+                <div className="project-tags">
+                    <Chip label="Tauri" variant="outlined" />
+                    <Chip label="Rust" variant="outlined" />
+                    <Chip label="React" variant="outlined" />
+                    <Chip label="TypeScript" variant="outlined" />
+                    <Chip label="Vite" variant="outlined" />
+                    <Chip label="SQLite" variant="outlined" />
+                    <Chip label="Fuzzy Search" variant="outlined" />
+                    <Chip label="Windows" variant="outlined" />
                 </div>
             </div>
             <div className="project">

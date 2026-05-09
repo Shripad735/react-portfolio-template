@@ -64,7 +64,7 @@ const career: TimelineItem[] = [
 const elementStyle = {
   background: "var(--bg-surface)",
   color: "var(--text-primary)",
-  borderRadius: "14px",
+  borderRadius: "8px",
   border: "1px solid var(--border-soft)",
   boxShadow: "var(--shadow-sm)",
 };
@@ -81,6 +81,7 @@ const iconStyle = {
 function TimelineSection({ items, type }: { items: TimelineItem[]; type: "work" | "education" }) {
   const disableTimelineAnimation =
     typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
     (window.matchMedia("(max-width: 900px)").matches ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 

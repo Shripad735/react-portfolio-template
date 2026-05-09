@@ -1,48 +1,46 @@
 .blogs-container {
   width: var(--container-content);
   margin: 0 auto;
-  padding: var(--section-space) clamp(0.3rem, 0.9vw, 0.9rem);
+  padding: 0 0 var(--section-space);
 }
 
 .blogs-container h1 {
-  font-size: clamp(1.85rem, 4vw, 2.7rem);
-  margin-bottom: 1.55rem;
-  margin-left: 0.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-soft);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
 
 .articles-list {
   display: grid;
-  gap: 1rem;
+  border-top: 1px solid var(--border-soft);
 }
 
 .article-item {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  border-bottom: 1px solid var(--border-soft);
+  transition: background-color 0.22s ease;
 }
 
 .article-item:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-soft));
-  box-shadow: var(--shadow-soft);
+  background: var(--bg-surface);
 }
 
 .article-item a {
   display: block;
-  padding: 1.08rem 1.22rem;
+  padding: 1.05rem 0.25rem;
 }
 
 .article-item h3 {
-  font-size: 1.02rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
   font-weight: 600;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--text-primary);
 }
 
 .article-item a:hover h3 {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .more-articles {
@@ -52,17 +50,18 @@
 .more-articles a {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-  background: var(--bg-surface);
-  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 0.55rem 0.92rem;
+  padding: 0.62rem 0.9rem;
 }
 
 .more-articles a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--bg-surface);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
 }
