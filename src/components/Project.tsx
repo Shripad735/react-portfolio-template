@@ -58,17 +58,18 @@ function Project() {
             Traffic Division. Features include GPS-based report routing,
             bilingual interface, real-time alerts, and an admin dashboard with
             analytics.
+            <br></br>
+            <strong>
+              More info{" "}
+              <a
+                href="https://shripad735.github.io/Traffic-Buddy-Details/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                here
+              </a>
+            </strong>
           </p>
-          <strong>
-            More info{" "}
-            <a
-              href="https://shripad735.github.io/Traffic-Buddy-Details/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              here
-            </a>
-          </strong>
           <div className="project-tags">
             <Chip label="React" variant="outlined" />
             <Chip label="Node.js" variant="outlined" />
