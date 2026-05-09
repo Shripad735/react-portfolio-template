@@ -15,6 +15,7 @@ type NavigationProps = {
 
 const navItems: NavItem[] = [
   { label: "Expertise", target: "expertise" },
+  { label: "Certifications", target: "certifications" },
   { label: "History", target: "history" },
   { label: "Projects", target: "projects" },
   { label: "Articles", target: "articles" },

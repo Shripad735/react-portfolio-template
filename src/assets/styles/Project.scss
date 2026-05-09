@@ -1,100 +1,116 @@
 .projects-container {
   width: var(--container-wide);
   margin: 0 auto;
-  padding: var(--section-space) clamp(0.3rem, 0.9vw, 0.9rem);
+  padding: var(--section-space) 0;
 }
 
 .projects-container h1 {
-  font-size: clamp(1.85rem, 4vw, 2.7rem);
-  margin-left: 0.1rem;
+  width: var(--container-content);
+  margin: 0 auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-soft);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
 }
 
 .projects-grid {
-  margin-top: 1.9rem;
+  width: var(--container-wide);
+  margin: clamp(1.7rem, 4vw, 2.8rem) auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.55rem;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(0.85rem, 1.6vw, 1.15rem);
 }
 
 .project {
+  grid-column: span 4;
   display: flex;
   flex-direction: column;
   content-visibility: auto;
-  contain-intrinsic-size: 420px;
+  contain-intrinsic-size: 470px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
-  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.project:nth-child(1),
+.project:nth-child(2) {
+  grid-column: span 6;
 }
 
 .project:hover {
-  transform: translateY(-7px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-soft));
+  border-color: var(--accent);
+}
+
+.project > a:first-child {
+  display: block;
+  background: var(--bg-muted);
+  overflow: hidden;
 }
 
 .project .zoom {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  transition: transform 0.42s ease;
-  border-bottom: 1px solid var(--border-soft);
+  display: block;
+  transition: transform 0.36s ease, filter 0.36s ease;
+  filter: saturate(0.94);
 }
 
 .project:hover .zoom {
-  transform: scale(1.03);
+  transform: scale(1.025);
+  filter: saturate(1);
 }
 
 .project > a h2,
 .project > p,
 .project .project-tags {
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding-left: clamp(1rem, 2vw, 1.25rem);
+  padding-right: clamp(1rem, 2vw, 1.25rem);
 }
 
 .project > a h2 {
   margin-top: 1rem;
-  font-size: 1.2rem;
-  line-height: 1.35;
+  font-size: clamp(1.15rem, 1.7vw, 1.36rem);
+  line-height: 1.28;
 }
 
 .project > a:hover h2 {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .project p {
-  margin-top: 0.65rem;
+  margin-top: 0.7rem;
   margin-bottom: 0;
   color: var(--text-secondary);
   font-size: 0.94rem;
-  line-height: 1.75;
+  line-height: 1.72;
   flex-grow: 1;
 }
 
 .project p strong a {
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 700;
-}
-
-.project p strong a:hover {
   text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.46rem;
   padding-top: 1rem;
-  padding-bottom: 1.3rem;
+  padding-bottom: 1.18rem;
 }
 
 .project-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.38rem 0.68rem;
-  font-size: 0.75rem;
+  padding: 0.34rem 0.58rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: var(--text-secondary);
   background: var(--bg-muted);
@@ -102,21 +118,30 @@
   border-radius: 999px;
 }
 
-@media (max-width: 900px) {
-  .project {
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
-    transition: border-color 0.24s ease, box-shadow 0.24s ease;
+@media (max-width: 1180px) {
+  .project,
+  .project:nth-child(1),
+  .project:nth-child(2) {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 720px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project,
+  .project:nth-child(1),
+  .project:nth-child(2) {
+    grid-column: auto;
   }
 
   .project:hover {
     transform: none;
-    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.09);
   }
 
-  .project .zoom {
-    transition: none;
-  }
-
+  .project .zoom,
   .project:hover .zoom {
     transform: none;
   }
