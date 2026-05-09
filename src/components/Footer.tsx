@@ -16,7 +16,7 @@ function Footer() {
       </div>
       <p>
         A portfolio designed and built by{" "}
-        <a href="https://github.com/Shripad735" target="_blank" rel="noreferrer">Shripad Khandare</a> with care.
+        <a href="https://github.com/Shripad735" target="_blank" rel="noreferrer">Shripad Khandare</a>
       </p>
     </footer>
   );
