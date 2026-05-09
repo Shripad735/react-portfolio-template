@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react';
-import '../assets/styles/Contact.scss';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import "../assets/styles/Contact.scss";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
-
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
   const [nameError, setNameError] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<boolean>(false);
@@ -17,34 +16,37 @@ function Contact() {
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
+    setNameError(name === "");
+    setEmailError(email === "");
+    setMessageError(message === "");
 
-    if (name !== '' && email !== '' && message !== '') {
+    if (name !== "" && email !== "" && message !== "") {
       var templateParams = {
         name: name,
         email: email,
-        message: message
+        message: message,
       };
 
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_hh7es0t';
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_im1bms6';
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'rrvcf1sHUgT5ehkl8';
+      const serviceId =
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_hh7es0t";
+      const templateId =
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_im1bms6";
+      const publicKey =
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "rrvcf1sHUgT5ehkl8";
 
       emailjs.send(serviceId, templateId, templateParams, publicKey).then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully! I will get back to you soon.');
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully! I will get back to you soon.");
         },
         (error) => {
-          console.log('FAILED...', error);
-          alert('Failed to send message. Please try again.');
+          console.log("FAILED...", error);
+          alert("Failed to send message. Please try again.");
         },
       );
-      setName('');
-      setEmail('');
-      setMessage('');
+      setName("");
+      setEmail("");
+      setMessage("");
     }
   };
 
@@ -53,15 +55,15 @@ function Contact() {
       <div className="items-container">
         <div className="contact_wrapper">
           <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen! You can reach me at shripadkhandare2020@gmail.com or use the form below.</p>
+          <p>You can reach me at shripadkhandare2020@gmail.com.</p>
           <form
             ref={form}
             noValidate={true}
             autoComplete="off"
-            className='contact-form'
+            className="contact-form"
             onSubmit={sendEmail}
           >
-            <div className='form-flex'>
+            <div className="form-flex">
               <div className="form-group">
                 <label htmlFor="contact-name">Your Name</label>
                 <input
@@ -72,7 +74,9 @@ function Contact() {
                   onChange={(e) => setName(e.target.value)}
                   aria-invalid={nameError}
                 />
-                {nameError && <span className="error-text">Please enter your name</span>}
+                {nameError && (
+                  <span className="error-text">Please enter your name</span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="contact-email">Email</label>
@@ -84,7 +88,9 @@ function Contact() {
                   onChange={(e) => setEmail(e.target.value)}
                   aria-invalid={emailError}
                 />
-                {emailError && <span className="error-text">Please enter your email</span>}
+                {emailError && (
+                  <span className="error-text">Please enter your email</span>
+                )}
               </div>
             </div>
             <div className="form-group">
@@ -98,7 +104,9 @@ function Contact() {
                 onChange={(e) => setMessage(e.target.value)}
                 aria-invalid={messageError}
               />
-              {messageError && <span className="error-text">Please enter the message</span>}
+              {messageError && (
+                <span className="error-text">Please enter the message</span>
+              )}
             </div>
             <button type="submit">Send Message</button>
           </form>
