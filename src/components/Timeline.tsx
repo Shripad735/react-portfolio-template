@@ -1,8 +1,14 @@
 import React from "react";
 import "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import {
+  faBriefcase,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "../assets/styles/Timeline.scss";
 
@@ -30,7 +36,7 @@ const education: TimelineItem[] = [
     date: "2022 - 2026",
     title: "B.Tech. - Computer Engineering",
     subtitle: "MIT Academy of Engineering, Pune",
-    details: "CGPA: 9.13 / 10",
+    details: "CGPA: 9.31 / 10",
   },
 ];
 
@@ -39,7 +45,8 @@ const career: TimelineItem[] = [
     date: "Jun 2024 - Aug 2024",
     title: "Full Stack Web Developer Intern",
     subtitle: "Career Credentials",
-    details: "Contributed to a Full Stack Web Project called Project Planner. Gained experience in front-end development with React.js, backend with Express.js, and database management with MySQL.",
+    details:
+      "Contributed to a Full Stack Web Project called Project Planner. Gained experience in front-end development with React.js, backend with Express.js, and database management with MySQL.",
   },
   // {
   //   date: "Jun 2024 - Sep 2024",
@@ -51,13 +58,16 @@ const career: TimelineItem[] = [
     date: "Jun 2025 - July 2025",
     title: "Summer Intern - Node.js",
     subtitle: "Celebal Technologies (Remote)",
-    details: "Currently working in the Node.js department with a focus on practical learning, industry-oriented projects, and skill development.",
+    details:
+      "Currently working in the Node.js department with a focus on practical learning, industry-oriented projects, and skill development.",
   },
   {
-    date: "Jul 2025 - (Ongoing)",
+    date: "Jul 2025 - Jun 2026",
     title: "Digital Applications Intern",
-    subtitle: "Colgate Global Business Services Pvt. Ltd. (CGBS) | GSSO Team (Hybrid)",
-    details: "Working in Enterprise Automation, Digital Marketing, and Data Analytics. Automated the end-to-end intake process for GDA Marketing Applications using Google Apps Script and Jira REST APIs, handling 13+ request archetypes across platforms like SFMC, SFDC, Gigya, and Web Tagging. Developed a Customer Engagement Dashboard with interactive visualizations and dynamic filtering. Provided application support for a AEM Redirects Console (Custom NodeJS application), including debugging, and creating comprehensive Windows setup documentation.",
+    subtitle:
+      "Colgate Global Business Services Pvt. Ltd. (CGBS) | GIT Team (Hybrid)",
+    details:
+      "Worked across Enterprise Automation, Digital Marketing, and Data Analytics. Built a Forms-to-Jira automation suite (Google Forms + Apps Script + Jira APIs) covering 13+ intake archetypes, including SFMC, Data Cloud, Web Tagging, GDPR, and Gigya workflows. Also developed a responsive customer engagement dashboard, supported AEM Redirects Console in production, and authored setup/automation documentation for onboarding and maintainability.",
   },
 ];
 
@@ -78,7 +88,13 @@ const iconStyle = {
   color: "#ffffff",
 };
 
-function TimelineSection({ items, type }: { items: TimelineItem[]; type: "work" | "education" }) {
+function TimelineSection({
+  items,
+  type,
+}: {
+  items: TimelineItem[];
+  type: "work" | "education";
+}) {
   const disableTimelineAnimation =
     typeof window !== "undefined" &&
     typeof window.matchMedia === "function" &&
@@ -86,7 +102,10 @@ function TimelineSection({ items, type }: { items: TimelineItem[]; type: "work" 
       window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   const icon = type === "work" ? faBriefcase : faGraduationCap;
-  const className = type === "work" ? "vertical-timeline-element--work" : "vertical-timeline-element--education";
+  const className =
+    type === "work"
+      ? "vertical-timeline-element--work"
+      : "vertical-timeline-element--education";
 
   return (
     <VerticalTimeline animate={!disableTimelineAnimation}>
@@ -101,7 +120,9 @@ function TimelineSection({ items, type }: { items: TimelineItem[]; type: "work" 
           icon={<FontAwesomeIcon icon={icon} />}
         >
           <h3 className="vertical-timeline-element-title">{item.title}</h3>
-          <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
+          <h4 className="vertical-timeline-element-subtitle">
+            {item.subtitle}
+          </h4>
           <p>{item.details}</p>
         </VerticalTimelineElement>
       ))}
