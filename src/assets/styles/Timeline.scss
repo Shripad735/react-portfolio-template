@@ -14,58 +14,125 @@
   margin-top: clamp(3rem, 6vw, 5rem);
 }
 
-.vertical-timeline::before {
-  background: var(--border-soft);
+/* ── Vertical Timeline ──────────────────────────────────────── */
+
+.vtimeline {
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.vtimeline__line {
+  position: absolute;
+  left: 0.55rem;
+  top: 0;
+  bottom: 0;
   width: 1px;
+  background: var(--border-soft);
 }
 
-.vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px var(--bg-page), var(--shadow-sm) !important;
+.vtimeline__item {
+  position: relative;
+  padding-bottom: 2rem;
 }
 
-.vertical-timeline-element-content {
-  border-radius: var(--radius-lg) !important;
-  border: 1px solid var(--border-soft) !important;
-  box-shadow: none !important;
+.vtimeline__item:last-child {
+  padding-bottom: 0;
 }
 
-.vertical-timeline-element-content:hover {
-  border-color: var(--accent) !important;
-  box-shadow: var(--shadow-sm) !important;
+/* ── Dot (icon on the line) ────────────────────────────────── */
+
+.vtimeline__dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.15rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.45rem;
+  z-index: 1;
+  box-shadow: 0 0 0 3px var(--bg-page), var(--shadow-sm);
 }
 
-.vertical-timeline-element-content p,
-.vertical-timeline-element-content h3,
-.vertical-timeline-element-content h4 {
-  color: var(--text-primary) !important;
+/* ── Date pill ─────────────────────────────────────────────── */
+
+.vtimeline__date {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.55rem;
+  font-family: var(--font-subtle);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border-radius: 999px;
 }
 
-.vertical-timeline-element-content p {
-  color: var(--text-secondary) !important;
+/* ── Card ──────────────────────────────────────────────────── */
+
+.vtimeline__card {
+  padding: 1.2rem 1.3rem 1.3rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vtimeline__card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ── Card internals ────────────────────────────────────────── */
+
+.vtimeline__title {
+  font-family: var(--font-subtle);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.vtimeline__subtitle {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-subtle);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.vtimeline__details {
+  margin: 0.65rem 0 0;
+  font-size: 0.92rem;
   line-height: 1.7;
-  margin-top: 0.55rem;
+  color: var(--text-secondary);
 }
 
-.vertical-timeline-element-date {
-  color: var(--text-secondary) !important;
-  font-family: var(--font-body) !important;
-  font-weight: 700 !important;
+.vtimeline__details strong {
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
-.vertical-timeline-element-title {
-  font-size: 1.08rem;
-  line-height: 1.4;
-}
+/* ── Responsive ────────────────────────────────────────────── */
 
-.vertical-timeline-element-subtitle {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
-  color: var(--text-tertiary) !important;
-}
+@media (max-width: 540px) {
+  .vtimeline {
+    padding-left: 2rem;
+  }
 
-@media screen and (max-width: 1170px) {
-  .vertical-timeline-element-date {
-    margin-top: 0.75rem;
-    display: block;
+  .vtimeline__dot {
+    left: -2rem;
+  }
+
+  .vtimeline__card {
+    padding: 1rem 1.1rem 1.1rem;
   }
 }
