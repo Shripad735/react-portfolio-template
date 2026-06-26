@@ -35,7 +35,7 @@ const career: TimelineItem[] = [
   {
     date: "Jun – Aug 2024",
     title: "Full Stack Web Developer Intern",
-    subtitle: "Core Decimal | Career Credentials",
+    subtitle: "Core Decimal Solutions",
     details:
       "Contributed to Project Planner, a full-stack interactive web application. Built responsive UIs using ReactJS, developed server-side APIs with ExpressJS, and handled MySQL database operations including schema design and query optimization.",
   },
