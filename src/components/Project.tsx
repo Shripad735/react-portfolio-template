@@ -204,16 +204,19 @@ function Project() {
             target="_blank"
             rel="noreferrer"
           >
-            <h2>MERN App CI/CD Automation with AWS</h2>
+            <h2>MERN App CI/CD with AWS</h2>
           </a>
           <p>
-            Developed a collaborative project management web app with MERN stack
-            and MySQL. Features dual user roles for task assignment and
-            completion verification, streamlining project workflows.{" "}
+            Published a step-by-step tutorial on deploying a MERN To-Do
+            application to AWS EC2 using CloudFormation for
+            infrastructure-as-code and a complete CI/CD pipeline with AWS
+            CodePipeline, CodeBuild, and CodeDeploy. Covers automated builds
+            triggered by GitHub pushes, secure environment variable management
+            with Parameter Store, and production-ready deployment strategies.{" "}
             <strong>
               Codebase Link{" "}
               <a
-                href="https://github.com/OMpawar140/Super-30-Project-Tracker"
+                href="https://github.com/Shripad735/To-Do-App"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -223,13 +226,17 @@ function Project() {
             .
           </p>
           <div className="project-tags">
-            <Chip label="React" variant="outlined" />
-            <Chip label="Vite" variant="outlined" />
-            <Chip label="TypeScript" variant="outlined" />
-            <Chip label="Node.js" variant="outlined" />
-            <Chip label="PostgreSQL" variant="outlined" />
-            <Chip label="Firebase" variant="outlined" />
-            <Chip label="Tailwind CSS" variant="outlined" />
+            <Chip label="MERN" variant="outlined" />
+            <Chip label="AWS" variant="outlined" />
+            <Chip label="CloudFormation" variant="outlined" />
+            <Chip label="EC2" variant="outlined" />
+            <Chip label="CodePipeline" variant="outlined" />
+            <Chip label="CodeBuild" variant="outlined" />
+            <Chip label="CodeDeploy" variant="outlined" />
+            <Chip label="IAM" variant="outlined" />
+            <Chip label="S3" variant="outlined" />
+            <Chip label="Parameter Store" variant="outlined" />
+            <Chip label="CI/CD" variant="outlined" />
           </div>
         </div>
         <div className="project">
