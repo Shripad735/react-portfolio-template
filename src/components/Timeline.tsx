@@ -1,22 +1,13 @@
-import React from "react";
-import "@fortawesome/free-regular-svg-icons";
+import React, { ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBriefcase,
-  faGraduationCap,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { faBriefcase, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Timeline.scss";
 
 type TimelineItem = {
   date: string;
   title: string;
   subtitle: string;
-  details: string;
+  details: ReactNode;
 };
 
 const education: TimelineItem[] = [
@@ -24,109 +15,64 @@ const education: TimelineItem[] = [
     date: "2020",
     title: "10th | MSBSHSE",
     subtitle: "Shri Sant Dnyaneshwar Madhyamik Vidyalaya Kothrud, Pune",
-    details: "Percentage: 93 / 100",
+    details: <>Percentage: <strong>93 / 100</strong></>,
   },
   {
-    date: "2020 - 2022",
+    date: "2020 – 2022",
     title: "12th | MSBSHSE",
-    subtitle: "MIT JUNIOR COLLEGE, KOTHRUD, PUNE",
-    details: "Percentage: 78 / 100",
+    subtitle: "MIT Junior College, Kothrud, Pune",
+    details: <>Percentage: <strong>78 / 100</strong></>,
   },
   {
-    date: "2022 - 2026",
-    title: "B.Tech. - Computer Engineering",
+    date: "2022 – 2026",
+    title: "B.Tech. – Computer Engineering",
     subtitle: "MIT Academy of Engineering, Pune",
-    details: "CGPA: 9.31 / 10",
+    details: <>CGPA: <strong>9.31 / 10</strong></>,
   },
 ];
 
 const career: TimelineItem[] = [
   {
-    date: "Jun 2024 - Aug 2024",
+    date: "Jun – Aug 2024",
     title: "Full Stack Web Developer Intern",
-    subtitle: "Career Credentials",
+    subtitle: "Core Decimal | Career Credentials",
     details:
-      "Contributed to a Full Stack Web Project called Project Planner. Gained experience in front-end development with React.js, backend with Express.js, and database management with MySQL.",
+      "Contributed to Project Planner, a full-stack interactive web application. Built responsive UIs using ReactJS, developed server-side APIs with ExpressJS, and handled MySQL database operations including schema design and query optimization.",
   },
-  // {
-  //   date: "Jun 2024 - Sep 2024",
-  //   title: "AICTE Cloud Virtual Internship",
-  //   subtitle: "Remote",
-  //   details: "Mastered core AWS services like EC2, S3, RDS, and VPC. Gained experience in automating infrastructure using CloudFormation and enhanced skills in cloud cost management.",
-  // },
   {
-    date: "Jun 2025 - July 2025",
-    title: "Summer Intern - Node.js",
+    date: "Jun – Jul 2025",
+    title: "Summer Intern – Node.js",
     subtitle: "Celebal Technologies (Remote)",
     details:
-      "Currently working in the Node.js department with a focus on practical learning, industry-oriented projects, and skill development.",
+      "Implemented secure JWT authentication and bcrypt password hashing. Engineered RESTful APIs for all CRUD operations with data validation. Integrated third-party APIs for real-time flight data into the application's chatbot with error handling and retry logic. Built file upload functionality using Multer with single and multiple file support.",
   },
   {
-    date: "Jul 2025 - Jun 2026",
+    date: "Jul 2025 – Jun 2026",
     title: "Digital Applications Intern",
-    subtitle:
-      "Colgate Global Business Services Pvt. Ltd. (CGBS) | GIT Team (Hybrid)",
+    subtitle: "Colgate Global Business Services (CGBS) | GIT Team",
     details:
-      "Worked across Enterprise Automation, Digital Marketing, and Data Analytics. Built a Forms-to-Jira automation suite (Google Forms + Apps Script + Jira APIs) covering 13+ intake archetypes, including SFMC, Data Cloud, Web Tagging, GDPR, and Gigya workflows. Also developed a responsive customer engagement dashboard, supported AEM Redirects Console in production, and authored setup/automation documentation for onboarding and maintainability.",
+      "Automated end-to-end intake for GDA Digital Applications using Google Forms, Apps Script, and Jira REST APIs across 13+ request archetypes including SFMC, Data Cloud, Web Tagging, GDPR, and Gigya workflows. Engineered rule-based workflows for Salesforce Marketing Cloud and Data Cloud intakes. Designed a Customer Engagement Dashboard with dynamic filters and responsive UI. Provided AEM Redirects Console (ARC) support in production and authored documentation for the automation suite and Windows setup guides.",
   },
 ];
 
-const elementStyle = {
-  background: "var(--bg-surface)",
-  color: "var(--text-primary)",
-  borderRadius: "8px",
-  border: "1px solid var(--border-soft)",
-  boxShadow: "var(--shadow-sm)",
-};
-
-const arrowStyle = {
-  borderRight: "7px solid var(--bg-surface)",
-};
-
-const iconStyle = {
-  background: "var(--accent)",
-  color: "#ffffff",
-};
-
-function TimelineSection({
-  items,
-  type,
-}: {
-  items: TimelineItem[];
-  type: "work" | "education";
-}) {
-  const disableTimelineAnimation =
-    typeof window !== "undefined" &&
-    typeof window.matchMedia === "function" &&
-    (window.matchMedia("(max-width: 900px)").matches ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-
-  const icon = type === "work" ? faBriefcase : faGraduationCap;
-  const className =
-    type === "work"
-      ? "vertical-timeline-element--work"
-      : "vertical-timeline-element--education";
-
+function TimelineSection({ items, icon }: { items: TimelineItem[]; icon: typeof faBriefcase }) {
   return (
-    <VerticalTimeline animate={!disableTimelineAnimation}>
-      {items.map((item) => (
-        <VerticalTimelineElement
-          key={`${item.date}-${item.title}`}
-          className={className}
-          contentStyle={elementStyle}
-          contentArrowStyle={arrowStyle}
-          date={item.date}
-          iconStyle={iconStyle}
-          icon={<FontAwesomeIcon icon={icon} />}
-        >
-          <h3 className="vertical-timeline-element-title">{item.title}</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            {item.subtitle}
-          </h4>
-          <p>{item.details}</p>
-        </VerticalTimelineElement>
+    <div className="vtimeline">
+      <div className="vtimeline__line" />
+      {items.map((item, i) => (
+        <div key={`${item.date}-${i}`} className="vtimeline__item">
+          <div className="vtimeline__dot">
+            <FontAwesomeIcon icon={icon} />
+          </div>
+          <div className="vtimeline__date">{item.date}</div>
+          <div className="vtimeline__card">
+            <h3 className="vtimeline__title">{item.title}</h3>
+            <h4 className="vtimeline__subtitle">{item.subtitle}</h4>
+            <p className="vtimeline__details">{item.details}</p>
+          </div>
+        </div>
       ))}
-    </VerticalTimeline>
+    </div>
   );
 }
 
@@ -135,9 +81,9 @@ function Timeline() {
     <div id="history">
       <div className="items-container">
         <h1>Education</h1>
-        <TimelineSection items={education} type="education" />
+        <TimelineSection items={education} icon={faGraduationCap} />
         <h1>Career Journey</h1>
-        <TimelineSection items={career} type="work" />
+        <TimelineSection items={career} icon={faBriefcase} />
       </div>
     </div>
   );

@@ -84,17 +84,16 @@ const projects: ProjectData[] = [
       "Step-by-step tutorial on deploying a MERN To-Do app to AWS EC2 using CloudFormation, CodePipeline, CodeBuild, and CodeDeploy with automated GitHub-triggered builds.",
     image: cicdPipeline,
     tags: [
-      "MERN",
       "AWS",
       "CloudFormation",
       "EC2",
       "CodePipeline",
+      "CI/CD",
       "CodeBuild",
       "CodeDeploy",
       "IAM",
       "S3",
       "Parameter Store",
-      "CI/CD",
     ],
     liveUrl:
       "https://medium.com/@shripadkhandare/automate-your-mern-app-deployment-on-aws-with-cloudformation-a-ci-cd-pipeline-439eae6f8953",
