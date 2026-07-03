@@ -3,6 +3,14 @@ import '../assets/styles/Blogs.scss';
 
 const articles = [
     {
+        title: "The Oldest Problem in Programming Has Exactly Three Solutions.",
+        link: "https://medium.com/@shripadkhandare/the-oldest-problem-in-programming-has-exactly-three-solutions-bc395051dfc1"
+    },
+    {
+        title: "Why AI Tokens Are So Expensive (And Why Nobody Explains It Properly)",
+        link: "https://medium.com/@shripadkhandare/why-ai-tokens-are-so-expensive-and-why-nobody-explains-it-properly-5ee2340447da"
+    },
+    {
         title: "Your Password Can Be Stolen. Your Passkey Can't. Here's Why.",
         link: "https://medium.com/@shripadkhandare/your-password-can-be-stolen-your-passkey-cant-here-s-why-d7a8952f4ddd"
     },
@@ -18,18 +26,18 @@ const articles = [
         title: "A Beginner's Guide to Creating AWS VPC Components Using the CLI",
         link: "https://medium.com/@shripadkhandare/a-beginners-guide-to-creating-aws-vpc-components-using-the-cli-45eca99a3233"
     },
-    {
-        title: "20 AI Concepts Every Beginner Should Know.",
-        link: "https://medium.com/@shripadkhandare/20-ai-concepts-every-beginner-should-know-39edcab25304"
-    },
+    // {
+    //     title: "20 AI Concepts Every Beginner Should Know.",
+    //     link: "https://medium.com/@shripadkhandare/20-ai-concepts-every-beginner-should-know-39edcab25304"
+    // },
     {
         title: "Implementing Single Sign-On (SSO) in AWS: A Step-by-Step Guide",
         link: "https://medium.com/@shripadkhandare/implementing-single-sign-on-sso-in-aws-a-step-by-step-guide-b648269afbd9"
     },
-    {
-        title: "How Google Won the AI Race by Never Really Leaving It",
-        link: "https://medium.com/@shripadkhandare/how-google-won-the-ai-race-by-never-really-leaving-it-f3626020a4d6"
-    },
+    // {
+    //     title: "How Google Won the AI Race by Never Really Leaving It",
+    //     link: "https://medium.com/@shripadkhandare/how-google-won-the-ai-race-by-never-really-leaving-it-f3626020a4d6"
+    // },
     {
         title: "Comprehensive Guide to Recovering EC2 Instance Access: Key Pair Replacement for Beginners",
         link: "https://medium.com/@shripadkhandare/comprehensive-guide-to-recovering-ec2-instance-access-key-pair-replacement-for-beginners-7df8c9d734b7"
