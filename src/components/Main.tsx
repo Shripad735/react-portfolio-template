@@ -1,47 +1,108 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faBookOpen, faCode, faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import portrait from "../assets/images/Myself.jpg";
+import Icon, { IconName } from "../components/Icon";
+import { featuredProjects, projects } from "../data/projects";
+import { primarySocials, profile } from "../data/profile";
 import "../assets/styles/Main.scss";
-import Myself from "../assets/images/Myself.jpg";
 
+const iconNames: Record<string, IconName> = {
+  GitHub: "github",
+  LinkedIn: "linkedin",
+  Medium: "medium",
+  LeetCode: "leetcode",
+  Goodreads: "goodreads",
+  HackerRank: "hackerrank",
+};
+
+/**
+ * The home page is a single screen: nothing below the fold, nothing to scroll
+ * for. Everything else lives one click away in the navigation.
+ */
 function Main() {
-  const socialLinks = [
-    { href: "https://github.com/Shripad735", icon: faGithub, label: "GitHub" },
-    { href: "https://www.linkedin.com/in/shripad-khandare-39a2a2203/", icon: faLinkedin, label: "LinkedIn" },
-    { href: "https://leetcode.com/u/Shripad735/", icon: faCode, label: "LeetCode" },
-    { href: "https://www.hackerrank.com/profile/shripad_khandare", icon: faTerminal, label: "HackerRank" },
-    { href: "https://www.goodreads.com/user/show/195633318-shripad-khandare", icon: faBookOpen, label: "Goodreads" },
-  ];
-
   return (
-    <section className="container hero-page">
-      <div className="about-section">
-        <div className="content">
-          <p className="page-eyebrow">Backend developer</p>
-          <h1>Shripad Khandare</h1>
-          <p className="hero-role">Backend Developer (Node.js) · Cloud &amp; DevOps Enthusiast</p>
-          <p className="hero-summary">
-            I design reliable backend systems, cloud-native workflows, and practical automation with a focus on clean delivery and measurable impact.
-          </p>
-          <div className="social-icons" aria-label="Social profiles">
-            {socialLinks.map((item) => (
-              <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label}>
-                <FontAwesomeIcon icon={item.icon} />
-              </a>
+    <div className="stage">
+      <span className="stage__backdrop grid-backdrop" aria-hidden="true" />
+
+      <div className="container stage__inner">
+        <div className="stage__grid">
+        <div className="stage__copy">
+          <p className="eyebrow">{profile.role}</p>
+
+          <h1 className="stage__title">{profile.headline}</h1>
+
+          <p className="stage__summary">{profile.summary}</p>
+
+          <ul className="stage__links" aria-label="Selected projects">
+            {featuredProjects.map((project) => (
+              <li key={project.slug}>
+                <a
+                  className="stage__link"
+                  href={project.liveUrl ?? project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="stage__link-title">{project.title}</span>
+                  <span className="stage__link-meta mono">{project.kind}</span>
+                </a>
+              </li>
             ))}
-          </div>
-          <div className="hero-cta">
-            <Link to="/projects">View projects</Link>
-            <Link to="/contact">Contact me</Link>
+          </ul>
+
+          <div className="stage__actions">
+            <Link className="button" to="/contact">
+              Get in touch
+            </Link>
+            <a
+              className="button button--ghost"
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Résumé
+            </a>
+            <Link className="stage__all" to="/projects">
+              All {projects.length} projects
+            </Link>
           </div>
         </div>
-        <div className="image-wrapper">
-          <img src={Myself} alt="Shripad Khandare portrait" />
+
+        <figure className="stage__portrait">
+          <img
+            src={portrait}
+            alt={`Portrait of ${profile.name}`}
+            width={2933}
+            height={3047}
+            decoding="async"
+          />
+        </figure>
+        </div>
+
+        <div className="stage__foot">
+          <p className="stage__status">
+            <span className="status-dot" aria-hidden="true" />
+            {profile.availability}
+          </p>
+
+          <ul className="socials" aria-label="Profiles">
+            {primarySocials.map((social) => (
+              <li key={social.label}>
+                <a
+                  className="socials__link"
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <Icon name={iconNames[social.label]} />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

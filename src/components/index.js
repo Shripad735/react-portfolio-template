@@ -8,3 +8,5 @@ export { default as Certifications } from "./Certifications";
 export { default as Contact } from "./Contact";
 export { default as Blogs } from "./Blogs";
 export { default as ReadingJourney } from "./ReadingJourney";
+export { default as ThemeToggle } from "./ThemeToggle";
+export { default as Icon } from "./Icon";

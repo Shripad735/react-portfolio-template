@@ -1,69 +1,47 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import gcpAceBadge from "../assets/images/associate-cloud-engineer-certification.png";
-import awsCcpBadge from "../assets/images/aws-certified-cloud-practitioner.png";
+import { certifications } from "../data/journey";
 import "../assets/styles/Certifications.scss";
-
-const certifications = [
-  {
-    name: "Google Cloud Certified Associate Cloud Engineer",
-    issuer: "Google Cloud",
-    level: "Associate level",
-    credentialUrl:
-      "https://www.credly.com/badges/2709b0c2-f87a-4712-983b-70646dde914e/public_url",
-    badgeImage: gcpAceBadge,
-    badgeAlt: "Google Cloud Certified Associate Cloud Engineer badge",
-  },
-  {
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    level: "Foundational level",
-    credentialUrl:
-      "https://www.credly.com/badges/ab5f7c89-d3ec-4b97-8699-7ea2c5f7be80/public_url",
-    badgeImage: awsCcpBadge,
-    badgeAlt: "AWS Certified Cloud Practitioner badge",
-  },
-];
 
 function Certifications() {
   return (
-    <section className="certifications-container" id="certifications">
-      <div className="certifications-header">
-        <h1>Certifications</h1>
+    <section className="section container certifications" aria-labelledby="certifications-heading">
+      <div className="section-head">
+        <div>
+          <p className="eyebrow">Certifications</p>
+          <h2 id="certifications-heading">Certified and verified</h2>
+        </div>
+        <p className="section-head__aside">Verified badges on Credly</p>
       </div>
 
-      <div className="certifications-grid">
+      <ul className="cert-list">
         {certifications.map((certification) => (
-          <article className="certification-card" key={certification.name}>
-            <div className="certification-badge">
+          <li className="cert" key={certification.name}>
+            <div className="cert__badge">
               <img
-                className="certification-badge-image"
                 src={certification.badgeImage}
                 alt={certification.badgeAlt}
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
-            <div className="certification-details">
-              <span className="certification-name">{certification.name}</span>
-              <span className="certification-issuer">
-                {certification.issuer}
-              </span>
-              <span className="certification-level">{certification.level}</span>
+            <div className="cert__body">
+              <p className="cert__issuer mono">{certification.issuer}</p>
+              <h3 className="cert__name">{certification.name}</h3>
+              <p className="cert__level">{certification.level}</p>
             </div>
 
             <a
-              className="certification-link"
+              className="link cert__link"
               href={certification.credentialUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Verify <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              Verify credential
             </a>
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

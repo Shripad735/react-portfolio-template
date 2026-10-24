@@ -1,97 +1,42 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faServer, faCode } from '@fortawesome/free-solid-svg-icons';
-import '../assets/styles/Expertise.scss';
-
-const labelsFirst = [
-    "Node.js",
-    "Express.js",
-    "Python",
-    "Java",
-    "HTML",
-    "CSS",
-    "ReactJS",
-    "REST APIs",
-    "MySQL",
-    "MongoDB",
-    "DynamoDB",
-];
-
-const labelsSecond = [
-    "AWS EC2",
-    "S3",
-    "IAM",
-    "VPC",
-    "Lambda",
-    "API Gateway",
-    "Auto Scaling",
-    "Load Balancing",
-    "CloudFormation",
-    "AWS Parameter Store",
-    "Terraform",
-    "Docker",
-    "Git",
-    "GitHub",
-    "CodePipeline",
-    "CodeBuild",
-    "CodeDeploy",
-];
-
-const labelsThird = [
-    "C++",
-    "Java",
-    "Python",
-    "Data Structures",
-    "Algorithms",
-    "LeetCode",
-    "HackerRank",
-    "Jira",
-    "Google Apps Script",
-    "Twilio",
-    "Google Maps API",
-];
+import { areas } from "../data/areas";
+import "../assets/styles/Expertise.scss";
 
 function Expertise() {
-    const renderTags = (labels: string[]) => (
-        <div className="flex-chips">
-            <span className="chip-title">Tech stack:</span>
-            {labels.map((label) => (
-                <span key={label} className="chip">{label}</span>
-            ))}
-        </div>
-    );
+  return (
+    <section className="section container expertise" aria-labelledby="expertise-heading">
+      <header className="page-head">
+        <p className="eyebrow">Expertise</p>
+        <h1 id="expertise-heading">What I work with</h1>
+        <p className="lede">
+          Five areas, roughly in the order I spend time on them. The tools matter less than the
+          habits around them: define the interface, check the input, log the failure, write down
+          the fix.
+        </p>
+      </header>
 
-    return (
-    <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faServer} size="3x"/>
-                    <h3>Backend Development</h3>
-                    <p>I specialize in building robust and scalable server-side applications. My expertise lies in creating RESTful APIs, managing databases, and implementing business logic using technologies like Node.js, Express.js, and Python.</p>
-                    {renderTags(labelsFirst)}
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>Cloud & DevOps</h3>
-                    <p>I have extensive experience with AWS services and infrastructure automation. I specialize in setting up CI/CD pipelines, managing cloud resources, and implementing scalable architectures using Infrastructure as Code.</p>
-                    {renderTags(labelsSecond)}
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faCode} size="3x"/>
-                    <h3>Problem Solving & Tools</h3>
-                    <p>I am passionate about problem-solving with a strong foundation in Data Structures and Algorithms. I actively practice on competitive platforms and leverage various tools and APIs for building integrated solutions.</p>
-                    {renderTags(labelsThird)}
-                </div>
+      <div className="expertise__list">
+        {areas.map((area) => (
+          <article className="area" key={area.id} id={area.id}>
+            <div className="area__rail" aria-hidden="true">
+              <span className="area__index mono">{area.index}</span>
+              <span className="area__line" />
             </div>
-        </div>
-    </div>
-    );
+
+            <div className="area__body">
+              <h2 className="area__title">{area.title}</h2>
+              <p className="area__summary">{area.summary}</p>
+              <ul className="tags area__stack" aria-label={`${area.title} tools`}>
+                {area.stack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Expertise;

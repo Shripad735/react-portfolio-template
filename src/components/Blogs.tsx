@@ -1,69 +1,48 @@
 import React from "react";
-import '../assets/styles/Blogs.scss';
-
-const articles = [
-    {
-        title: "The Oldest Problem in Programming Has Exactly Three Solutions.",
-        link: "https://medium.com/@shripadkhandare/the-oldest-problem-in-programming-has-exactly-three-solutions-bc395051dfc1"
-    },
-    {
-        title: "Why AI Tokens Are So Expensive (And Why Nobody Explains It Properly)",
-        link: "https://medium.com/@shripadkhandare/why-ai-tokens-are-so-expensive-and-why-nobody-explains-it-properly-5ee2340447da"
-    },
-    {
-        title: "Your Password Can Be Stolen. Your Passkey Can't. Here's Why.",
-        link: "https://medium.com/@shripadkhandare/your-password-can-be-stolen-your-passkey-cant-here-s-why-d7a8952f4ddd"
-    },
-    {
-        title: "Google Just Solved AI's Memory Problem (And It's Simpler Than You Think)",
-        link: "https://medium.com/@shripadkhandare/google-just-solved-ais-memory-problem-and-it-s-simpler-than-you-think-9430a63c888d"
-    },
-    {
-        title: "Building Your First Serverless CRUD API on AWS: A Beginner's Guide",
-        link: "https://medium.com/@shripadkhandare/building-your-first-serverless-crud-api-on-aws-a-beginners-guide-75e44bc6a633"
-    },
-    {
-        title: "A Beginner's Guide to Creating AWS VPC Components Using the CLI",
-        link: "https://medium.com/@shripadkhandare/a-beginners-guide-to-creating-aws-vpc-components-using-the-cli-45eca99a3233"
-    },
-    // {
-    //     title: "20 AI Concepts Every Beginner Should Know.",
-    //     link: "https://medium.com/@shripadkhandare/20-ai-concepts-every-beginner-should-know-39edcab25304"
-    // },
-    {
-        title: "Implementing Single Sign-On (SSO) in AWS: A Step-by-Step Guide",
-        link: "https://medium.com/@shripadkhandare/implementing-single-sign-on-sso-in-aws-a-step-by-step-guide-b648269afbd9"
-    },
-    // {
-    //     title: "How Google Won the AI Race by Never Really Leaving It",
-    //     link: "https://medium.com/@shripadkhandare/how-google-won-the-ai-race-by-never-really-leaving-it-f3626020a4d6"
-    // },
-    {
-        title: "Comprehensive Guide to Recovering EC2 Instance Access: Key Pair Replacement for Beginners",
-        link: "https://medium.com/@shripadkhandare/comprehensive-guide-to-recovering-ec2-instance-access-key-pair-replacement-for-beginners-7df8c9d734b7"
-    }
-];
+import { articles } from "../data/writing";
+import { profile } from "../data/profile";
+import "../assets/styles/Blogs.scss";
 
 function Blogs() {
-    return (
-        <div className="blogs-container" id="articles">
-            <h1>My Articles</h1>
-            <div className="articles-list">
-                {articles.map((article, index) => (
-                    <div className="article-item" key={index}>
-                        <a href={article.link} target="_blank" rel="noreferrer">
-                            <h3>{article.title}</h3>
-                        </a>
-                    </div>
-                ))}
-            </div>
-            <div className="more-articles">
-                <a href="https://medium.com/@shripadkhandare" target="_blank" rel="noreferrer">
-                    See more on Medium
-                </a>
-            </div>
-        </div>
-    );
+  return (
+    <section className="section container writing" aria-labelledby="writing-heading">
+      <header className="page-head">
+        <p className="eyebrow">Writing</p>
+        <h1 id="writing-heading">Notes on things I had to figure out</h1>
+        <p className="lede">
+          I write on Medium when something takes longer to understand than it should. Mostly cloud
+          infrastructure, security, and whatever I have been learning about AI that week.
+        </p>
+      </header>
+
+      <ol className="article-list">
+        {articles.map((article, index) => (
+          <li className="article" key={article.link}>
+            <a className="article__link" href={article.link} target="_blank" rel="noreferrer">
+              <span className="article__index mono" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="article__title">{article.title}</span>
+              <span className="article__meta mono">
+                {article.topic}
+                <span className="article__sep" aria-hidden="true">
+                  ,
+                </span>
+                {article.readingTime}
+              </span>
+              <span className="article__arrow" aria-hidden="true" />
+            </a>
+          </li>
+        ))}
+      </ol>
+
+      <p className="writing__more">
+        <a className="button button--ghost" href={profile.mediumHandle} target="_blank" rel="noreferrer">
+          Everything on Medium
+        </a>
+      </p>
+    </section>
+  );
 }
 
 export default Blogs;

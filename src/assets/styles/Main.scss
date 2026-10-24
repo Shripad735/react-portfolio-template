@@ -1,30 +1,397 @@
-.hero-page { padding: clamp(2rem, 4vw, 3.75rem) 0 var(--section-space); }
+/* ==========================================================================
+   Home stage
 
-.about-section {
+   One screen of content. The grid takes the space left between the header and
+   the footer, and spacing scales with viewport height so short laptops and
+   phones fit without scrolling.
+   ========================================================================== */
+
+.stage {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-block: clamp(1.5rem, 4vh, 2.75rem);
+}
+
+/* Texture sits on its own layer so the mask never clips the portrait. */
+.stage__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Everything inside the stage lines up on the shared container width. */
+.stage__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4.5vh, 3.25rem);
+}
+
+.stage__grid,
+.stage__foot {
+  position: relative;
+}
+
+/* Copy on the left, portrait on the right. The copy column is wide enough to
+   hold the headline in two lines, and both columns centre against each other
+   so neither floats. */
+.stage__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 310px);
-  align-items: start;
-  gap: clamp(1.5rem, 4vw, 4.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
 }
 
-.about-section .content { max-width: 690px; padding-top: 0; }
-.about-section .content h1 { max-width: 9ch; margin-bottom: 1rem; font-size: clamp(3.25rem, 7vw, 5.6rem); line-height: 0.92; }
-.hero-role { margin-bottom: 1rem; color: var(--text-primary); font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 600; }
-.hero-summary { max-width: 57ch; margin-bottom: 0; color: var(--text-secondary); }
-.image-wrapper { border: 1px solid var(--border-strong); background: var(--bg-muted); }
-.image-wrapper img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.social-icons { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.25rem; }
-.social-icons a { display: inline-grid; width: 36px; height: 36px; place-items: center; border: 1px solid var(--border-soft); color: var(--text-secondary); }
-.social-icons a:hover { color: var(--accent-ink); border-color: var(--accent); }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.25rem; }
-.hero-cta a { padding: 0.65rem 0.9rem; border: 1px solid var(--border-strong); font-size: 0.88rem; font-weight: 700; }
-.hero-cta a:first-child { border-color: var(--accent-ink); background: var(--accent-ink); color: var(--bg-surface); }
-.hero-cta a:last-child { color: var(--text-primary); }
-
-@media (max-width: 720px) {
-  .about-section { grid-template-columns: 1fr; }
-  .image-wrapper { width: min(68vw, 270px); grid-row: 1; }
-  .about-section .content { padding-top: 0; }
+/* The copy column carries its own rhythm. */
+.stage__copy {
+  display: grid;
+  max-width: 40rem;
+  gap: clamp(1.35rem, 2.8vh, 2rem);
 }
 
-@media (max-width: 440px) { .hero-cta a { width: 100%; text-align: center; } }
+/* Portrait ------------------------------------------------------------- */
+
+.stage__portrait {
+  margin: 0;
+  width: 100%;
+  max-width: 300px;
+  justify-self: start;
+}
+
+.stage__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+/* Type ----------------------------------------------------------------- */
+
+.stage__title {
+  max-width: 26ch;
+  margin-bottom: 0;
+  font-size: clamp(1.95rem, 3.1vw, 2.7rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.stage__summary {
+  max-width: 44ch;
+  margin-bottom: 0;
+  color: var(--ink-secondary);
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  line-height: 1.65;
+}
+
+/* Project links -------------------------------------------------------- */
+
+.stage__links {
+  display: grid;
+  max-width: 42rem;
+  border-top: 1px solid var(--rule);
+  list-style: none;
+}
+
+.stage__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.62rem 0.15rem;
+  border-bottom: 1px solid var(--rule);
+  transition: padding-left var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.stage__link:hover {
+  padding-left: 0.55rem;
+  color: var(--accent);
+}
+
+.stage__link-title {
+  font-size: 0.92rem;
+  font-weight: 450;
+  letter-spacing: -0.012em;
+}
+
+.stage__link-meta {
+  flex: none;
+  color: var(--ink-faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--dur) var(--ease);
+}
+
+.stage__link:hover .stage__link-meta {
+  color: var(--accent);
+}
+
+.stage__link--all .stage__link-title {
+  font-weight: 500;
+}
+
+.stage__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1rem;
+}
+
+/* Secondary route to the full list, kept quieter than the buttons. */
+.stage__all {
+  color: var(--accent);
+  font-size: 0.86rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color var(--dur) var(--ease);
+}
+
+.stage__all:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Foot: status and profiles -------------------------------------------- */
+
+.stage__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.stage__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--ink-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* Availability marker: a dot with a soft ring, always paired with its label. */
+.status-dot {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--positive);
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 1px solid var(--positive);
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.socials__link {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--ink-tertiary);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.socials__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.socials__link:hover {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   Responsive
+
+   The portrait keeps its own column down to phones, where it stacks above the
+   intro as a small avatar.
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .stage__grid {
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  .stage__portrait {
+    max-width: 190px;
+  }
+
+  .stage__title {
+    max-width: none;
+  }
+
+  .stage__summary {
+    max-width: 46ch;
+  }
+}
+
+@media (max-width: 620px) {
+  .stage {
+    gap: 1.25rem;
+    justify-content: flex-start;
+    padding-block: 1.25rem 0.9rem;
+  }
+
+  /* Single column: the avatar sits above the intro, flush left. */
+  .stage__grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .stage__portrait {
+    grid-row: 1;
+    max-width: 82px;
+    justify-self: start;
+  }
+
+  .stage__copy {
+    grid-row: 2;
+    max-width: none;
+    gap: 1rem;
+  }
+
+  .stage__title {
+    max-width: 22ch;
+    margin-bottom: 0;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .stage__summary {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .stage__link {
+    padding-block: 0.45rem;
+  }
+
+  .stage__link-title {
+    font-size: 0.88rem;
+  }
+
+  .stage__actions .button {
+    padding: 0.52rem 0.9rem;
+    font-size: 0.83rem;
+  }
+
+  .stage__foot {
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+  }
+}
+
+@media (max-width: 400px) {
+  .stage__link-meta {
+    display: none;
+  }
+
+  .stage__portrait {
+    max-width: 70px;
+  }
+}
+
+/* Short laptop screens: trim spacing before anything has to scroll. */
+@media (max-height: 720px) and (min-width: 621px) {
+  .stage {
+    padding-block: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .stage__grid {
+    gap: 1rem;
+  }
+}
+
+/* Phones with little vertical space: three lines of summary, three projects in
+   one row, and tighter spacing so the page still fits a single screen. */
+@media (max-height: 800px) and (max-width: 620px) {
+  .stage {
+    padding-block: 1.1rem 0.8rem;
+    gap: 0.9rem;
+  }
+
+  .stage__grid,
+  .stage__copy {
+    gap: 0.85rem;
+  }
+
+  .stage__portrait {
+    max-width: 64px;
+  }
+
+  .stage__title {
+    font-size: clamp(1.5rem, 6.6vw, 1.8rem);
+  }
+
+  .stage__summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* Three projects across, so the list costs one line of height. */
+  .stage__links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 0.85rem;
+    border-top-color: transparent;
+  }
+
+  .stage__link {
+    padding-block: 0.3rem;
+    border-bottom-color: transparent;
+  }
+
+  .stage__link-meta {
+    display: none;
+  }
+
+  .stage__foot {
+    padding-top: 0.6rem;
+  }
+}
+
+/* ==========================================================================
+   Shared page pieces
+   ========================================================================== */
+
+.not-found {
+  padding-block: clamp(3rem, 10vw, 7rem);
+}
+
+.not-found__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.75rem 0 0;
+}

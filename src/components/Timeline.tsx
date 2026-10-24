@@ -1,97 +1,62 @@
-import React, { ReactNode } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { education, roles } from "../data/journey";
 import "../assets/styles/Timeline.scss";
-
-type TimelineItem = {
-  date: string;
-  title: string;
-  subtitle: string;
-  details: ReactNode;
-};
-
-const education: TimelineItem[] = [
-  {
-    date: "2020",
-    title: "10th | MSBSHSE",
-    subtitle: "Shri Sant Dnyaneshwar Madhyamik Vidyalaya Kothrud, Pune",
-    details: <>Percentage: <strong>93 / 100</strong></>,
-  },
-  {
-    date: "2020 – 2022",
-    title: "12th | MSBSHSE",
-    subtitle: "MIT Junior College, Kothrud, Pune",
-    details: <>Percentage: <strong>78 / 100</strong></>,
-  },
-  {
-    date: "2022 – 2026",
-    title: "B.Tech. – Computer Engineering",
-    subtitle: "MIT Academy of Engineering, Pune",
-    details: <>CGPA: <strong>9.31 / 10</strong></>,
-  },
-];
-
-const career: TimelineItem[] = [
-  {
-    date: "Jun – Aug 2024",
-    title: "Full Stack Web Developer Intern",
-    subtitle: "Core Decimal Solutions",
-    details:
-      "Contributed to Project Planner, a full-stack interactive web application. Built responsive UIs using ReactJS, developed server-side APIs with ExpressJS, and handled MySQL database operations including schema design and query optimization.",
-  },
-  {
-    date: "Jun – Jul 2025",
-    title: "Summer Intern – Node.js",
-    subtitle: "Celebal Technologies (Remote)",
-    details:
-      "Implemented secure JWT authentication and bcrypt password hashing. Engineered RESTful APIs for all CRUD operations with data validation. Integrated third-party APIs for real-time flight data into the application's chatbot with error handling and retry logic. Built file upload functionality using Multer with single and multiple file support.",
-  },
-  {
-    date: "Jul 2025 – Jun 2026",
-    title: "Digital Applications Intern",
-    subtitle: "Colgate Global Business Services (CGBS) | GIT Team",
-    details:
-      "Automated end-to-end intake for GDA Digital Applications using Google Forms, Apps Script, and Jira REST APIs across 13+ request archetypes including SFMC, Data Cloud, Web Tagging, GDPR, and Gigya workflows. Engineered rule-based workflows for Salesforce Marketing Cloud and Data Cloud intakes. Designed a Customer Engagement Dashboard with dynamic filters and responsive UI. Provided AEM Redirects Console (ARC) support in production and authored documentation for the automation suite and Windows setup guides.",
-  },
-  {
-    date: "Jul 2026 – Present",
-    title: "Associate Consultant",
-    subtitle: "Oracle Financial Services",
-    details: null,
-  },
-];
-
-function TimelineSection({ items, icon }: { items: TimelineItem[]; icon: typeof faBriefcase }) {
-  return (
-    <div className="vtimeline">
-      <div className="vtimeline__line" />
-      {items.map((item, i) => (
-        <div key={`${item.date}-${i}`} className="vtimeline__item">
-          <div className="vtimeline__dot">
-            <FontAwesomeIcon icon={icon} />
-          </div>
-          <div className="vtimeline__date">{item.date}</div>
-          <div className="vtimeline__card">
-            <h3 className="vtimeline__title">{item.title}</h3>
-            <h4 className="vtimeline__subtitle">{item.subtitle}</h4>
-            {item.details && <p className="vtimeline__details">{item.details}</p>}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function Timeline() {
   return (
-    <div id="history">
-      <div className="items-container">
-        <h1>Education</h1>
-        <TimelineSection items={education} icon={faGraduationCap} />
-        <h1>Career Journey</h1>
-        <TimelineSection items={career} icon={faBriefcase} />
+    <section className="section container history" aria-labelledby="experience-heading">
+      <header className="page-head">
+        <p className="eyebrow">Experience</p>
+        <h1 id="experience-heading">Where I have worked</h1>
+        <p className="lede">
+          Three internships and one full-time role. The first was mostly front end, and since then
+          the work has moved steadily toward services, cloud, and automation.
+        </p>
+      </header>
+
+      <div className="history__block">
+        <h2 className="history__label">Roles</h2>
+        <ol className="timeline">
+          {roles.map((role) => (
+            <li className="entry" key={`${role.org}-${role.period}`}>
+              <div className="entry__aside">
+                <p className="entry__period mono">{role.period}</p>
+                {role.location && <p className="entry__location mono">{role.location}</p>}
+              </div>
+
+              <div className="entry__body">
+                <h3 className="entry__title">{role.title}</h3>
+                <p className="entry__org">{role.org}</p>
+                <p className="entry__summary">{role.summary}</p>
+                {role.points.length > 0 && (
+                  <ul className="entry__points">
+                    {role.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
-    </div>
+
+      <div className="history__block">
+        <h2 className="history__label">Education</h2>
+        <ul className="education">
+          {education.map((study) => (
+            <li className="study" key={study.qualification}>
+              <p className="study__period mono">{study.period}</p>
+              <div className="study__body">
+                <h3 className="study__title">{study.qualification}</h3>
+                <p className="study__org">{study.institution}</p>
+              </div>
+              <p className="study__result mono">{study.result}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 

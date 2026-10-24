@@ -1,5 +1,8 @@
+import { profile } from "../data/profile";
+
+/** Kept for backwards compatibility: the résumé URL lives with the rest of the profile data. */
 export const resumeConfig = {
-  label: "Resume",
-  url: "https://drive.google.com/file/d/1cEgnDoSJCLupfsAsm7OYp6iYeTOZ_hxn/view?usp=sharing",
+  label: "Résumé",
+  url: profile.resumeUrl,
   isExternal: true,
 };

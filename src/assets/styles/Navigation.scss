@@ -1,75 +1,339 @@
-.site-nav {
-  border-bottom: 1px solid var(--border-soft);
-  background: var(--bg-page);
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid transparent;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 
-.nav-inner {
-  width: var(--container-wide);
-  min-height: 76px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.site-name {
-  color: var(--accent-ink);
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-.menu {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.1rem 1.1rem;
-}
-
-.menu a {
-  color: var(--text-secondary);
-  font-size: 0.83rem;
-  font-weight: 600;
-  line-height: 2.2;
-}
-
-.menu a.active, .menu a:hover { color: var(--accent-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.32em; }
-.menu-toggle { display: none; }
-
-
-
-@media (max-width: 900px) {
-  .nav-inner { min-height: 68px; position: relative; justify-content: space-between; }
-  .menu-toggle {
-    display: block;
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-sm);
-    padding: 0.42rem 0.65rem;
-    background: var(--bg-surface);
-    color: var(--text-primary);
-    cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+@supports (backdrop-filter: blur(12px)) {
+  .site-header {
+    backdrop-filter: saturate(180%) blur(12px);
   }
-  .menu {
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--rule);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: var(--nav-height);
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+}
+
+/* Utility cluster sits hard right; the nav links take the space after it. */
+.nav__utils {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: auto;
+}
+
+/* Brand ---------------------------------------------------------------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.brand__mark {
+  display: grid;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background var(--dur) var(--ease);
+}
+
+.brand:hover .brand__mark {
+  background: var(--accent);
+}
+
+.brand__text {
+  display: grid;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.brand__name {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand__role {
+  color: var(--ink-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+}
+
+/* Desktop nav ---------------------------------------------------------- */
+
+.nav {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+  list-style: none;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.42rem 0.58rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink-secondary);
+  font-size: 0.84rem;
+  font-weight: 450;
+  letter-spacing: -0.008em;
+  white-space: nowrap;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.nav__index {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0;
+  transition: color var(--dur) var(--ease);
+}
+
+.nav__link:hover {
+  background: var(--accent-quiet);
+  color: var(--ink);
+}
+
+.nav__link.is-active {
+  color: var(--accent);
+}
+
+.nav__link.is-active .nav__index {
+  color: var(--accent);
+}
+
+.nav__resume {
+  padding: 0.42rem 0.72rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* The toggle sits in the header on desktop and inside the drawer on phones. */
+.nav__theme {
+  margin-left: 0.1rem;
+}
+
+/* ==========================================================================
+   Theme toggle
+   ========================================================================== */
+
+.theme-toggle {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.theme-toggle__track {
+  position: relative;
+  display: flex;
+  width: 52px;
+  height: 28px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 100px;
+  background: var(--surface-sunken);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.theme-toggle:hover .theme-toggle__track {
+  border-color: var(--ink-faint);
+}
+
+.theme-toggle__icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  color: var(--ink-faint);
+  transition: color var(--dur) var(--ease);
+}
+
+.theme-toggle__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.theme-toggle__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+/* Thumb on the left = light, on the right = dark. */
+.theme-toggle[aria-pressed="false"] .theme-toggle__icon--sun {
+  color: var(--accent);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__thumb {
+  transform: translateX(24px);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__icon--moon {
+  color: var(--accent);
+}
+
+/* Mobile --------------------------------------------------------------- */
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-toggle__bars {
+  display: grid;
+  gap: 3px;
+  width: 13px;
+}
+
+.nav-toggle__bars span {
+  height: 1px;
+  background: var(--ink);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.nav-toggle__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:first-child {
+  transform: translateY(2px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:last-child {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+@media (max-width: 920px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* The role line is the first thing to go when the header gets tight. */
+  .brand__role {
     display: none;
+  }
+
+  /* The utility cluster dissolves so the toggle and résumé can be placed
+     inside the drawer, leaving the header to the brand and the menu button. */
+  .nav__utils {
+    display: contents;
+  }
+
+  .nav {
     position: absolute;
     top: 100%;
     right: 0;
     left: 0;
-    z-index: 2;
-    padding: 0.75rem 1rem 1rem;
-    border: 1px solid var(--border-soft);
-    border-top: 0;
-    background: var(--bg-surface);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    padding: 0.5rem var(--gutter) 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
   }
-  .menu.open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.25rem 1rem; }
-  .menu-toggle { margin-left: auto; }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav__theme {
+    order: 1;
+    align-self: flex-start;
+    margin: 0 0 0.5rem;
+  }
+
+  .nav__list {
+    order: 2;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav__link {
+    padding: 0.6rem 0.35rem;
+    border-bottom: 1px solid var(--rule);
+    border-radius: 0;
+    font-size: 0.95rem;
+  }
+
+  .nav__link:hover {
+    background: transparent;
+  }
+
+  .nav__resume {
+    order: 3;
+    align-self: flex-start;
+    margin: 0.9rem 0 0;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.84rem;
+  }
 }
 
-@media (max-width: 430px) {
-  .menu.open { grid-template-columns: 1fr; }
+/* Very narrow screens: the mark alone is enough of a brand, and the menu
+   button needs the room more than the name does. */
+@media (max-width: 460px) {
+  .brand__text {
+    display: none;
+  }
 }

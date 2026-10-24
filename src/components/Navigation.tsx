@@ -1,66 +1,95 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { resumeConfig } from "./Resume";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
+import { navItems } from "../data/nav";
+import { profile } from "../data/profile";
 import "../assets/styles/Navigation.scss";
-
-type NavItem = {
-  label: string;
-  to?: string;
-  href?: string;
-};
-
-const navItems: NavItem[] = [
-  { label: "About", to: "/about" },
-  { label: "Expertise", to: "/expertise" },
-  { label: "Experience", to: "/experience" },
-  { label: "Projects", to: "/projects" },
-  { label: "Articles", to: "/articles" },
-  { label: "Reading", to: "/reading" },
-  { label: "Contact", to: "/contact" },
-  { label: resumeConfig.label, href: resumeConfig.url },
-];
 
 function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const closeMenu = () => setMobileOpen(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
 
   return (
-    <header className="site-nav">
-      <div className="nav-inner">
-        <NavLink className="site-name" to="/" onClick={closeMenu}>
-          SK
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
+      <div className="site-header__inner container">
+        <NavLink className="brand" to="/" aria-label={`${profile.name}, home`}>
+          <span className="brand__mark" aria-hidden="true">
+            {profile.initials}
+          </span>
+          <span className="brand__text">
+            <span className="brand__name">{profile.name}</span>
+            <span className="brand__role">{profile.role}</span>
+          </span>
         </NavLink>
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-expanded={mobileOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setMobileOpen((open) => !open)}
-        >
-          Menu
-        </button>
+
         <nav
           id="primary-navigation"
-          className={`menu ${mobileOpen ? "open" : ""}`}
+          className={`nav${mobileOpen ? " is-open" : ""}`}
           aria-label="Primary"
         >
-          {navItems.map((item) =>
-            item.href ? (
-              <a key={item.label} href={item.href} target="_blank" rel="noreferrer">
-                {item.label}
-              </a>
-            ) : (
-              <NavLink
-                key={item.label}
-                to={item.to as string}
-                onClick={closeMenu}
-                className={({ isActive }) => (isActive ? "active" : undefined)}
-              >
-                {item.label}
-              </NavLink>
-            ),
-          )}
+          <ul className="nav__list">
+            {navItems.map((item, index) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) => `nav__link${isActive ? " is-active" : ""}`}
+                >
+                  <span className="nav__index" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </nav>
+
+        <div className="nav__utils">
+          <a
+            className="button button--ghost nav__resume"
+            href={profile.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Résumé
+          </a>
+          <ThemeToggle className="nav__theme" />
+
+          <button
+            className="nav-toggle"
+            type="button"
+            aria-expanded={mobileOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMobileOpen((open) => !open)}
+          >
+            <span className="nav-toggle__bars" aria-hidden="true">
+              <span />
+              <span />
+            </span>
+            <span className="nav-toggle__label">{mobileOpen ? "Close" : "Menu"}</span>
+          </button>
+        </div>
       </div>
     </header>
   );
