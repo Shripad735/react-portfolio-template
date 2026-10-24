@@ -7,7 +7,7 @@ import apiZombie from "../assets/images/apiZombie.png";
 import resumeAnalyzer from "../assets/images/ResumeAnalyzer.png";
 import cicdPipeline from "../assets/images/CICD.jpg";
 import hospitalmsystem from "../assets/images/hospital-management-system-poster.png";
-import ShopEase from "../assets/images/shopease.png";
+import schoolsInPune from "../assets/images/schoolsInPune.png";
 import NetworkVisualizer from "../assets/images/compnetwork.png";
 import streamfetch from "../assets/images/Streamfetch.png";
 import clipstack from "../assets/images/Clipstack.png";
@@ -139,6 +139,23 @@ const projects: ProjectData[] = [
     githubUrl: "https://github.com/Shripad735/Kiroween-APIZombie",
   },
   {
+    title: "Shala - Pune School Finder",
+    description:
+      "School finder for families new to Pune, covering 1,246 schools across 76 areas with filters for classes, medium, management and facilities, side-by-side comparison, near-me search, and contact details. Data comes from UDISE and PMC records with no rankings; fees and admission dates are unavailable, and rural Pune and Pimpri-Chinchwad are not covered yet. Facility details are self-reported, so confirm them with the school.",
+    image: schoolsInPune,
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "UDISE",
+      "PMC Records",
+      "OpenStreetMap",
+    ],
+    liveUrl: "https://schools-in-pune.vercel.app",
+    githubUrl: "https://github.com/Shripad735/Shala-Pune-School-Info",
+  },
+  {
     title: "Network Visualizer",
     description:
       "Interactive educational platform for learning networking concepts — line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, subnet calculator, and network mapping.",
@@ -220,22 +237,6 @@ const projects: ProjectData[] = [
       "Plotly",
     ],
     githubUrl: "https://github.com/Shripad735/Resume-Analyser-Python",
-  },
-  {
-    title: "ShopEase - E-commerce Chatbot",
-    description:
-      "Intelligent customer support chatbot with Streamlit and Groq AI. Multi-language support, order tracking, product recommendations, and voice responses.",
-    image: ShopEase,
-    tags: [
-      "Python",
-      "Streamlit",
-      "Groq AI",
-      "MongoDB",
-      "Speech Recognition",
-      "Plotly",
-    ],
-    liveUrl: "https://shopease-se-hackethon.streamlit.app",
-    githubUrl: "https://github.com/Shripad735/ShopEase",
   },
 ];
 
