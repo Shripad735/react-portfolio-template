@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare, faCode } from "@fortawesome/free-solid-svg-icons";
 import trafficBuddy from "../assets/images/trafficbuddy.png";
 import projectPlanner from "../assets/images/project-tracker.png";
 import shareplate from "../assets/images/Shareplate.png";
@@ -158,7 +160,7 @@ const projects: ProjectData[] = [
   {
     title: "Network Visualizer",
     description:
-      "Interactive educational platform for learning networking concepts — line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, subnet calculator, and network mapping.",
+      "Interactive educational platform for learning networking concepts, with line coding visualization, TCP/UDP analysis, DNS/HTTP simulations, a subnet calculator, and network mapping.",
     image: NetworkVisualizer,
     tags: [
       "React",
@@ -191,7 +193,7 @@ const projects: ProjectData[] = [
   {
     title: "Financial Calculator Suite",
     description:
-      "Full-stack mobile app with seven essential financial tools — EMI, SIP, PPF, and GST calculators optimized for Indian users.",
+      "Full-stack mobile app with seven essential financial tools, including EMI, SIP, PPF, and GST calculators optimized for Indian users.",
     image: emiCalculator,
     tags: [
       "React Native",
@@ -243,7 +245,9 @@ const projects: ProjectData[] = [
 function ProjectCard({ project }: { project: ProjectData }) {
   return (
     <article className="project-card">
-      <img className="project-card-image" src={project.image} alt="" loading="lazy" decoding="async" />
+      <div className="project-media">
+        <img className="project-card-image" src={project.image} alt="" loading="lazy" decoding="async" />
+      </div>
       <div className="project-card-content">
         <h2>{project.title}</h2>
         <p>{project.description}</p>
@@ -251,8 +255,8 @@ function ProjectCard({ project }: { project: ProjectData }) {
           {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
         </ul>
         <div className="project-actions">
-          {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">View project</a>}
-          {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer">Source code</a>}
+          {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">View project <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" /></a>}
+          {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCode} size="xs" /> Source code</a>}
         </div>
       </div>
     </article>
@@ -262,9 +266,9 @@ function ProjectCard({ project }: { project: ProjectData }) {
 function Project() {
   return (
     <section className="projects-section">
-      <div className="projects-header">
+      <div className="section-head projects-header">
         <p className="page-eyebrow">Selected work</p>
-        <h1>Personal Projects</h1>
+        <h1>Personal Projects<span className="projects-count">{projects.length} projects</span></h1>
         <p className="projects-subtitle">
           Real-world applications and tools I&apos;ve built, from backend systems to cross-platform desktop apps.
         </p>

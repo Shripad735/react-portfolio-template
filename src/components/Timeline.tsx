@@ -1,6 +1,4 @@
 import React, { ReactNode } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/Timeline.scss";
 
 type TimelineItem = {
@@ -8,6 +6,7 @@ type TimelineItem = {
   title: string;
   subtitle: string;
   details: ReactNode;
+  tag?: string;
 };
 
 const education: TimelineItem[] = [
@@ -28,6 +27,7 @@ const education: TimelineItem[] = [
     title: "B.Tech. – Computer Engineering",
     subtitle: "MIT Academy of Engineering, Pune",
     details: <>CGPA: <strong>9.31 / 10</strong></>,
+    tag: "Distinction",
   },
 ];
 
@@ -37,46 +37,47 @@ const career: TimelineItem[] = [
     title: "Full Stack Web Developer Intern",
     subtitle: "Core Decimal Solutions",
     details:
-      "Contributed to Project Planner, a full-stack interactive web application. Built responsive UIs using ReactJS, developed server-side APIs with ExpressJS, and handled MySQL database operations including schema design and query optimization.",
+      "Worked on Project Planner, a team task-management app. I built front-end screens in React, added back-end APIs in Express, and helped shape the MySQL tables and queries so task assignment and sign-off stayed fast and correct.",
+    tag: "Internship",
   },
   {
     date: "Jun – Jul 2025",
-    title: "Summer Intern – Node.js",
-    subtitle: "Celebal Technologies (Remote)",
+    title: "Summer Intern – Backend",
+    subtitle: "Celebral Technologies (Remote)",
     details:
-      "Implemented secure JWT authentication and bcrypt password hashing. Engineered RESTful APIs for all CRUD operations with data validation. Integrated third-party APIs for real-time flight data into the application's chatbot with error handling and retry logic. Built file upload functionality using Multer with single and multiple file support.",
+      "Built login and signup with JWT tokens and hashed passwords, then added the main CRUD APIs with proper input checks. I also wired live flight data into the team's chatbot with retries for failed calls, and added single and multi-file uploads.",
+    tag: "Internship",
   },
   {
     date: "Jul 2025 – Jun 2026",
     title: "Digital Applications Intern",
-    subtitle: "Colgate Global Business Services (CGBS) | GIT Team",
+    subtitle: "Colgate Global Business Services (GIT Team)",
     details:
-      "Automated end-to-end intake for GDA Digital Applications using Google Forms, Apps Script, and Jira REST APIs across 13+ request archetypes including SFMC, Data Cloud, Web Tagging, GDPR, and Gigya workflows. Engineered rule-based workflows for Salesforce Marketing Cloud and Data Cloud intakes. Designed a Customer Engagement Dashboard with dynamic filters and responsive UI. Provided AEM Redirects Console (ARC) support in production and authored documentation for the automation suite and Windows setup guides.",
+      "Spent close to a year automating how digital requests come in, using Google Forms plus Apps Script talking to Jira, covering 13+ request types like SFMC, Data Cloud, web tagging, GDPR, and Gigya. I built rule-based flows for the Salesforce Marketing Cloud and Data Cloud cases so common requests moved without manual steps. I also made a Customer Engagement Dashboard with filters and a clean mobile view, helped support the AEM Redirects Console in production, and wrote guides so the team could run and extend the setup on their own.",
+    tag: "Internship",
   },
   {
     date: "Jul 2026 – Present",
     title: "Associate Consultant",
     subtitle: "Oracle Financial Services",
     details: null,
+    tag: "Full-time",
   },
 ];
 
-function TimelineSection({ items, icon }: { items: TimelineItem[]; icon: typeof faBriefcase }) {
+function HistoryCards({ items }: { items: TimelineItem[] }) {
   return (
-    <div className="vtimeline">
-      <div className="vtimeline__line" />
+    <div className="history-list">
       {items.map((item, i) => (
-        <div key={`${item.date}-${i}`} className="vtimeline__item">
-          <div className="vtimeline__dot">
-            <FontAwesomeIcon icon={icon} />
+        <article key={`${item.date}-${i}`} className="history-card">
+          <div className="history-card-top">
+            <span className="history-date">{item.date}</span>
+            {item.tag && <span className="history-badge">{item.tag}</span>}
           </div>
-          <div className="vtimeline__date">{item.date}</div>
-          <div className="vtimeline__card">
-            <h3 className="vtimeline__title">{item.title}</h3>
-            <h4 className="vtimeline__subtitle">{item.subtitle}</h4>
-            {item.details && <p className="vtimeline__details">{item.details}</p>}
-          </div>
-        </div>
+          <h3>{item.title}</h3>
+          <h4>{item.subtitle}</h4>
+          {item.details && <p>{item.details}</p>}
+        </article>
       ))}
     </div>
   );
@@ -86,10 +87,28 @@ function Timeline() {
   return (
     <div id="history">
       <div className="items-container">
-        <h1>Education</h1>
-        <TimelineSection items={education} icon={faGraduationCap} />
-        <h1>Career Journey</h1>
-        <TimelineSection items={career} icon={faBriefcase} />
+        <div className="section-head history-head">
+          <p className="page-eyebrow">Background</p>
+          <h1>Experience</h1>
+          <p>My jobs and education so far, in order.</p>
+        </div>
+        <div className="history-grid">
+          <div className="history-section-title">
+            <span className="page-eyebrow">Career</span>
+            <h2>Work</h2>
+            <p>Three internships and my current full-time role.</p>
+          </div>
+          <HistoryCards items={career} />
+        </div>
+        <div className="history-divider" aria-hidden="true" />
+        <div className="history-grid">
+          <div className="history-section-title">
+            <span className="page-eyebrow">Education</span>
+            <h2>Study</h2>
+            <p>Schooling and my computer engineering degree.</p>
+          </div>
+          <HistoryCards items={education} />
+        </div>
       </div>
     </div>
   );
