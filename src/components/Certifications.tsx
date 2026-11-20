@@ -29,8 +29,10 @@ const certifications = [
 function Certifications() {
   return (
     <section className="certifications-container" id="certifications">
-      <div className="certifications-header">
+      <div className="section-head certifications-header">
+        <p className="page-eyebrow">Credentials</p>
         <h1>Certifications</h1>
+        <p>Two cloud certificates that support my everyday cloud work.</p>
       </div>
 
       <div className="certifications-grid">

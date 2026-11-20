@@ -1,23 +1,47 @@
 .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   border-bottom: 1px solid var(--border-soft);
-  background: var(--bg-page);
+  background: rgba(247, 247, 244, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+[data-theme="dark"] .site-nav {
+  background: rgba(12, 14, 13, 0.85);
 }
 
 .nav-inner {
   width: var(--container-wide);
-  min-height: 76px;
+  min-height: 68px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .site-name {
-  color: var(--accent-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.site-name-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--bg-ink);
+  color: var(--on-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 .menu {
@@ -25,51 +49,82 @@
   flex: 1;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.1rem 1.1rem;
+  justify-content: center;
+  gap: 0.15rem 0.25rem;
 }
 
 .menu a {
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
   color: var(--text-secondary);
-  font-size: 0.83rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  line-height: 2.2;
+  line-height: 1.4;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.menu a.active, .menu a:hover { color: var(--accent-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.32em; }
-.menu-toggle { display: none; }
+.menu a:hover { background: var(--bg-muted); color: var(--text-primary); }
+.menu a.active { background: var(--bg-ink); color: var(--on-ink); }
 
+.nav-theme {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.nav-theme:hover { border-color: var(--text-primary); }
 
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: var(--bg-ink);
+  color: var(--on-ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.nav-cta:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1rem;
+}
 
 @media (max-width: 900px) {
-  .nav-inner { min-height: 68px; position: relative; justify-content: space-between; }
-  .menu-toggle {
-    display: block;
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-sm);
-    padding: 0.42rem 0.65rem;
-    background: var(--bg-surface);
-    color: var(--text-primary);
-    cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-  }
+  .nav-inner { min-height: 64px; gap: 0.75rem; }
+  .nav-theme { margin-left: auto; }
+  .menu-toggle { display: inline-grid; place-items: center; }
+  .nav-cta { display: none; }
   .menu {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    padding: 0.75rem 1rem 1rem;
+    right: max(1rem, calc((100vw - var(--container-wide)) / 2));
+    left: max(1rem, calc((100vw - var(--container-wide)) / 2));
+    z-index: 60;
+    padding: 0.6rem;
     border: 1px solid var(--border-soft);
-    border-top: 0;
+    border-radius: 16px;
     background: var(--bg-surface);
+    box-shadow: var(--shadow-md);
   }
-  .menu.open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.25rem 1rem; }
-  .menu-toggle { margin-left: auto; }
-}
-
-@media (max-width: 430px) {
-  .menu.open { grid-template-columns: 1fr; }
+  .menu.open { display: grid; gap: 0.15rem; }
+  .menu a { padding: 0.85rem 1rem; font-size: 0.95rem; }
+  .menu a.active { background: var(--bg-ink); color: var(--on-ink); }
 }

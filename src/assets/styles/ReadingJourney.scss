@@ -1,4 +1,22 @@
 .reading-journey-container { width: var(--container-content); margin: 0 auto; padding: var(--section-space) 0; }
-.reading-journey-container h1 { margin-bottom: 0.9rem; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1; }
-.reading-journey-container p { max-width: 72ch; margin-bottom: 0.9rem; color: var(--text-secondary); font-size: 1.02rem; }
-.reading-journey-container a { color: var(--accent-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
+.reading-card {
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+.reading-card h1 { margin: 0.9rem 0 0.9rem; font-size: clamp(2rem, 4.5vw, 3rem); }
+.reading-card p { max-width: 68ch; margin-bottom: 0.9rem; color: var(--text-secondary); font-size: 1.02rem; }
+.reading-card p:last-child { margin-bottom: 0; }
+.reading-card a { color: var(--accent-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
+.reading-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.25rem 0 0; }
+.reading-tags span {
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg-page);
+  border: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}

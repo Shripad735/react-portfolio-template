@@ -34,7 +34,7 @@ function NotFound() {
 function App() {
   return (
     <BrowserRouter>
-      <div className="main-container">
+      <div className="main-container" id="top">
         <Navigation />
         <Routes>
           <Route path="/" element={<Page><Main /></Page>} />
